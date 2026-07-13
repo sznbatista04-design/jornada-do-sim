@@ -13,6 +13,70 @@
 </head>
 <body>
 
+<div id="diagnostico" class="diagnostico">
+  <div class="diagnostico-inner">
+    <img src="assets/img/monograma-rosa.png" alt="" class="diagnostico-logo" aria-hidden="true">
+
+    <div class="diagnostico-dots" aria-hidden="true">
+      <span class="dot active" data-dot="1"></span>
+      <span class="dot" data-dot="2"></span>
+      <span class="dot" data-dot="3"></span>
+      <span class="dot" data-dot="4"></span>
+    </div>
+
+    <div class="diagnostico-step active" data-step="1">
+      <span class="eyebrow">Antes de começar</span>
+      <h2>Quanto tempo falta para o seu casamento?</h2>
+      <div class="diagnostico-options">
+        <button class="diagnostico-option" data-answer="tempo:urgente">Menos de 6 meses</button>
+        <button class="diagnostico-option" data-answer="tempo:medio">6 a 12 meses</button>
+        <button class="diagnostico-option" data-answer="tempo:longo">Mais de 12 meses</button>
+        <button class="diagnostico-option" data-answer="tempo:indefinido">Ainda não tenho data</button>
+      </div>
+    </div>
+
+    <div class="diagnostico-step" data-step="2">
+      <span class="eyebrow">Pergunta 2 de 4</span>
+      <h2>O que mais te preocupa no planejamento?</h2>
+      <div class="diagnostico-options">
+        <button class="diagnostico-option" data-answer="perfil:financeiro">Orçamento e gastos</button>
+        <button class="diagnostico-option" data-answer="perfil:fornecedores">Escolher os fornecedores certos</button>
+        <button class="diagnostico-option" data-answer="perfil:organizacao">Organizar tudo sem esquecer nada</button>
+        <button class="diagnostico-option" data-answer="perfil:tempo">Conciliar com a rotina corrida</button>
+      </div>
+    </div>
+
+    <div class="diagnostico-step" data-step="3">
+      <span class="eyebrow">Pergunta 3 de 4</span>
+      <h2>Como você se sente hoje em relação ao seu casamento?</h2>
+      <div class="diagnostico-options">
+        <button class="diagnostico-option" data-answer="sentimento:animada">Animada, mas um pouco perdida</button>
+        <button class="diagnostico-option" data-answer="sentimento:ansiosa">Ansiosa, com medo de errar</button>
+        <button class="diagnostico-option" data-answer="sentimento:confiante">Confiante, só preciso de direção</button>
+        <button class="diagnostico-option" data-answer="sentimento:sobrecarregada">Sobrecarregada, sem tempo pra nada</button>
+      </div>
+    </div>
+
+    <div class="diagnostico-step" data-step="4">
+      <span class="eyebrow">Última pergunta</span>
+      <h2>Se existisse um método simples pra organizar tudo com clareza, você começaria hoje?</h2>
+      <div class="diagnostico-options">
+        <button class="diagnostico-option" data-answer="decisao:agora">Sim, quero começar agora</button>
+        <button class="diagnostico-option" data-answer="decisao:entender">Sim, mas quero entender melhor antes</button>
+      </div>
+    </div>
+
+    <div class="diagnostico-step diagnostico-result" data-step="result">
+      <span class="eyebrow">Seu diagnóstico</span>
+      <h2 id="diagnostico-titulo">Seu perfil de noiva</h2>
+      <p id="diagnostico-texto">Preparando sua análise...</p>
+      <a href="#" id="diagnostico-cta" class="btn btn-primary btn-large">Ver minha jornada personalizada →</a>
+    </div>
+
+    <button type="button" id="diagnostico-skip" class="diagnostico-skip">Pular e ir direto para a página →</button>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="container header-inner">
     <img src="assets/img/logo-rosa.png" alt="Jornada do Sim" class="header-logo">
