@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jornada do Sim — Planeje seu casamento com clareza e segurança</title>
-<meta name="description" content="A plataforma completa que guia sua jornada até o altar. Por Gabriella Batista — mais de 450 casais guiados.">
+<title>Jornada do Sim — O app que te orienta em cada decisão do seu casamento</title>
+<meta name="description" content="Nunca mais se sinta perdida. A Jornada do Sim te conduz pelas etapas certas, na ordem certa, com a Gab.IA 24h. Por Gabriella Batista.">
 <link rel="icon" href="assets/img/monograma-rosa.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,16 @@
 </head>
 <body>
 
+<!-- MINI-DIAGNÓSTICO (camada opcional antes da página) -->
 <div id="diagnostico" class="diagnostico">
   <div class="diagnostico-inner">
     <img src="assets/img/monograma-rosa.png" alt="" class="diagnostico-logo" aria-hidden="true">
-
     <div class="diagnostico-dots" aria-hidden="true">
       <span class="dot active" data-dot="1"></span>
       <span class="dot" data-dot="2"></span>
       <span class="dot" data-dot="3"></span>
       <span class="dot" data-dot="4"></span>
     </div>
-
     <div class="diagnostico-step active" data-step="1">
       <span class="eyebrow">Antes de começar</span>
       <h2>Quanto tempo falta para o seu casamento?</h2>
@@ -34,7 +33,6 @@
         <button class="diagnostico-option" data-answer="tempo:indefinido">Ainda não tenho data</button>
       </div>
     </div>
-
     <div class="diagnostico-step" data-step="2">
       <span class="eyebrow">Pergunta 2 de 4</span>
       <h2>O que mais te preocupa no planejamento?</h2>
@@ -45,7 +43,6 @@
         <button class="diagnostico-option" data-answer="perfil:tempo">Conciliar com a rotina corrida</button>
       </div>
     </div>
-
     <div class="diagnostico-step" data-step="3">
       <span class="eyebrow">Pergunta 3 de 4</span>
       <h2>Como você se sente hoje em relação ao seu casamento?</h2>
@@ -56,31 +53,29 @@
         <button class="diagnostico-option" data-answer="sentimento:sobrecarregada">Sobrecarregada, sem tempo pra nada</button>
       </div>
     </div>
-
     <div class="diagnostico-step" data-step="4">
       <span class="eyebrow">Última pergunta</span>
-      <h2>Se existisse um método simples pra organizar tudo com clareza, você começaria hoje?</h2>
+      <h2>Se existisse um app simples que te orienta em cada decisão, você começaria hoje?</h2>
       <div class="diagnostico-options">
         <button class="diagnostico-option" data-answer="decisao:agora">Sim, quero começar agora</button>
         <button class="diagnostico-option" data-answer="decisao:entender">Sim, mas quero entender melhor antes</button>
       </div>
     </div>
-
     <div class="diagnostico-step diagnostico-result" data-step="result">
       <span class="eyebrow">Seu diagnóstico</span>
       <h2 id="diagnostico-titulo">Seu perfil de noiva</h2>
       <p id="diagnostico-texto">Preparando sua análise...</p>
-      <a href="#" id="diagnostico-cta" class="btn btn-primary btn-large">Ver minha jornada personalizada →</a>
+      <a href="#planos" id="diagnostico-cta" class="btn btn-primary btn-large">Ver meus planos →</a>
     </div>
-
     <button type="button" id="diagnostico-skip" class="diagnostico-skip">Pular e ir direto para a página →</button>
   </div>
 </div>
 
+<!-- CABEÇALHO -->
 <header class="site-header">
   <div class="container header-inner">
     <img src="assets/img/logo-rosa.png" alt="Jornada do Sim" class="header-logo">
-    <a href="#planos" class="btn btn-small btn-primary">Garantir meu acesso</a>
+    <a href="#planos" class="btn btn-small btn-primary">Ver planos</a>
   </div>
 </header>
 
@@ -88,62 +83,51 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">✦ Plataforma exclusiva</span>
-        <h1>Planeje seu casamento com clareza, segurança e decisões alinhadas à sua realidade.</h1>
-        <p class="hero-sub">A plataforma completa de gestão para a noiva — com a GabIA, sua assessora por inteligência artificial, respondendo suas dúvidas 24h.</p>
-        <div class="hero-cta-row">
-          <a href="#planos" class="btn btn-primary btn-large">Quero garantir o meu acesso agora →</a>
-          <img src="assets/img/selo-rosa.png" alt="Sua jornada até o altar, por Gabriella Batista" class="hero-cta-selo">
-        </div>
-        <ul class="hero-trust">
-          <li>✓ Acesso por 18 meses</li>
-          <li>✓ Garantia de 7 dias</li>
-          <li>✓ +450 casais guiados ao altar</li>
-        </ul>
-      </div>
-      <div class="hero-visual">
-        <img src="assets/img/faixa-2-rosa.svg" alt="" class="hero-faixa hero-faixa-1" aria-hidden="true">
-        <img src="assets/img/faixa-1-rosa.svg" alt="" class="hero-faixa hero-faixa-2" aria-hidden="true">
-        <img src="assets/img/gabriella-madrid-sem-oculos.jpg" alt="Gabriella Batista, criadora da Jornada do Sim" class="hero-photo">
-      </div>
+    <img src="assets/img/faixa-2-rosa.svg" alt="" class="hero-faixa hero-faixa-1" aria-hidden="true">
+    <img src="assets/img/faixa-1-rosa.svg" alt="" class="hero-faixa hero-faixa-2" aria-hidden="true">
+    <div class="container hero-centered">
+      <img src="assets/img/monograma-rosa.png" alt="" class="hero-monograma" aria-hidden="true">
+      <span class="eyebrow">✦ Plataforma exclusiva · Por Gabriella Batista</span>
+      <h1>O app que te acompanha e orienta em cada decisão do seu casamento.</h1>
+      <p class="hero-sub">Nunca mais se sinta perdida! Na Jornada do Sim você é conduzida pelas etapas certas, na ordem certa e com apoio para tomar cada decisão.</p>
+      <a href="#planos" class="btn btn-primary btn-large">Ver planos</a>
+      <ul class="hero-trust">
+        <li>✓ Acesso imediato</li>
+        <li>✓ +450 noivas atendidas</li>
+        <li>✓ Inclui Gab.IA 24h</li>
+      </ul>
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-  <section class="trust-strip">
-    <div class="container trust-strip-inner">
-      <div class="trust-stat"><strong>+8</strong><span>anos de experiência</span></div>
-      <div class="trust-stat"><strong>+450</strong><span>casais guiados</span></div>
-      <div class="trust-stat"><strong>6 anos</strong><span>consecutivos Prêmio Casamento Awards</span></div>
-      <div class="trust-stat"><strong>7 dias</strong><span>de garantia total</span></div>
-    </div>
-  </section>
-
-  <!-- PROBLEMA -->
-  <section class="problem reveal">
-    <div class="container">
-      <h2 class="section-title center">Você hoje se sente perdida, sem saber por onde começar?</h2>
-      <div class="problem-grid">
-        <div class="problem-card">
-          <span class="problem-icon">?</span>
-          <p>Não sabe a ordem certa dos fornecedores, nem o que precisa perguntar antes de fechar contrato.</p>
-        </div>
-        <div class="problem-card">
-          <span class="problem-icon">$</span>
-          <p>Não sabe quanto vai custar o casamento que sonha, nem quanto investir em cada fornecedor.</p>
-        </div>
-        <div class="problem-card">
-          <span class="problem-icon">!</span>
-          <p>Tem medo de escolher errado e se arrepender depois — decisões que não têm volta.</p>
-        </div>
-        <div class="problem-card">
-          <span class="problem-icon">⏱</span>
-          <p>Sente o tempo passando e a ansiedade crescendo, sem saber se está no caminho certo.</p>
-        </div>
+  <!-- FAIXA BENEFÍCIOS - EM MOVIMENTO -->
+  <section class="benefits-marquee" aria-label="Benefícios">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>App inteligente personalizado para você</span><span class="marquee-sep">✦</span>
+        <span>Para cada decisão, uma orientação prática</span><span class="marquee-sep">✦</span>
+        <span>Planejamento financeiro</span><span class="marquee-sep">✦</span>
+        <span>Análise de contratos</span><span class="marquee-sep">✦</span>
+        <span>Assessora Gab.IA 24h disponível</span><span class="marquee-sep">✦</span>
+        <span>Lembretes de tarefas e pagamentos</span><span class="marquee-sep">✦</span>
+        <span>Tudo organizado em um só lugar</span><span class="marquee-sep">✦</span>
+        <span>Prático e fácil de usar</span><span class="marquee-sep">✦</span>
+        <span>Acesse de qualquer dispositivo</span><span class="marquee-sep">✦</span>
+        <span>Seu casamento na palma da sua mão</span><span class="marquee-sep">✦</span>
+        <span>Coerência e harmonia nas suas escolhas</span><span class="marquee-sep">✦</span>
       </div>
-      <p class="problem-bridge">O problema nunca foi falta de vontade. É a falta de um método claro e confiável pra decidir com segurança — e é exatamente isso que a Jornada do Sim te dá.</p>
+      <div class="marquee-track" aria-hidden="true">
+        <span>App inteligente personalizado para você</span><span class="marquee-sep">✦</span>
+        <span>Para cada decisão, uma orientação prática</span><span class="marquee-sep">✦</span>
+        <span>Planejamento financeiro</span><span class="marquee-sep">✦</span>
+        <span>Análise de contratos</span><span class="marquee-sep">✦</span>
+        <span>Assessora Gab.IA 24h disponível</span><span class="marquee-sep">✦</span>
+        <span>Lembretes de tarefas e pagamentos</span><span class="marquee-sep">✦</span>
+        <span>Tudo organizado em um só lugar</span><span class="marquee-sep">✦</span>
+        <span>Prático e fácil de usar</span><span class="marquee-sep">✦</span>
+        <span>Acesse de qualquer dispositivo</span><span class="marquee-sep">✦</span>
+        <span>Seu casamento na palma da sua mão</span><span class="marquee-sep">✦</span>
+        <span>Coerência e harmonia nas suas escolhas</span><span class="marquee-sep">✦</span>
+      </div>
     </div>
   </section>
 
@@ -151,210 +135,324 @@
   <section class="how-it-works reveal">
     <div class="container">
       <span class="eyebrow center">Como funciona</span>
-      <h2 class="section-title center">Simples como seguir um passo a passo</h2>
-      <p class="section-sub center">Nada de planilha complicada. Você assiste, aplica e organiza tudo no seu ritmo.</p>
+      <h2 class="section-title center">Simples como dizer <em>sim</em></h2>
+      <p class="section-sub center">Você não precisa aprender tudo sobre casamento. Basta deixar que a Jornada do Sim te mostre o próximo passo e te ajude nas suas decisões.</p>
       <div class="steps-grid">
         <div class="step-card">
           <span class="step-number">1</span>
-          <h3>Assista no seu ritmo</h3>
-          <p>Vídeos curtos e diretos guiando cada etapa do planejamento, do primeiro passo até a contagem regressiva.</p>
+          <h3>Conte sobre o seu casamento</h3>
+          <p>Você compartilha sua data, orçamento e outros detalhes do seu sonho.</p>
         </div>
         <div class="step-card">
           <span class="step-number">2</span>
-          <h3>Organize com o planner</h3>
-          <p>Planner profissional, guias e templates prontos pra usar e ajustar à realidade do seu casamento.</p>
+          <h3>Receba um plano personalizado</h3>
+          <p>A Jornada do Sim personaliza todo o seu planejamento, mostrando o que fazer, quando e como decidir.</p>
         </div>
         <div class="step-card">
           <span class="step-number">3</span>
-          <h3>Decida com segurança</h3>
-          <p>Escolha fornecedores, defina orçamento e feche contratos sabendo exatamente o que está fazendo.</p>
+          <h3>Desfrute dos preparativos</h3>
+          <p>Siga cada etapa com o apoio da Gab.IA, vídeos e ferramentas inteligentes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- O QUE ESTÁ INCLUSO -->
+  <!-- DEMONSTRAÇÃO VISUAL -->
+  <section class="demo-visual reveal">
+    <div class="container demo-visual-grid">
+      <div class="demo-visual-copy">
+        <h2 class="section-title">Você nunca mais vai precisar se perguntar…</h2>
+        <ul class="demo-questions">
+          <li>Por onde eu começo?</li>
+          <li>Será que já era para eu ter contratado isso?</li>
+          <li>Será que estou esquecendo alguma coisa importante?</li>
+          <li>Será que escolhi o fornecedor certo?</li>
+          <li>Será que eu estou pagando mais caro do que deveria?</li>
+          <li>Será que combina?</li>
+          <li>O que eu devo perguntar na reunião?</li>
+        </ul>
+      </div>
+      <div class="demo-visual-media">
+        <div class="video-placeholder">
+          <span class="video-placeholder-icon">▶</span>
+          <p>Demonstração da plataforma</p>
+          <small>Vídeo em breve</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLICAÇÃO DO PRODUTO -->
   <section class="features reveal">
     <div class="container">
       <span class="eyebrow center">Tudo em um só lugar</span>
-      <h2 class="section-title center">O que você recebe na Jornada do Sim</h2>
+      <h2 class="section-title center">Transforme a ansiedade e o medo de errar em uma jornada <em>leve, organizada e tranquila</em>.</h2>
+      <p class="section-sub center">Com a Jornada do Sim você não perde horas pesquisando, não esquece detalhes importantes e nem toma decisões no escuro. A plataforma sempre te mostra o próximo passo, orienta cada decisão e acompanha você até o grande dia.</p>
       <div class="features-grid">
-        <div class="feature-item">
-          <h3>Coleção de vídeos explicativos</h3>
-          <p>Entenda cada etapa do planejamento, do início aos últimos detalhes antes do grande dia.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Planner profissional completo</h3>
-          <p>Controle financeiro, cronograma e organização de fornecedores em um só lugar.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Guias e templates prontos</h3>
-          <p>Materiais prontos pra usar e adaptar à realidade e ao estilo do seu casamento.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Flexibilidade total</h3>
-          <p>Assista de onde quiser, no seu tempo — sem prazos ou pressão.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Comunidade exclusiva</h3>
-          <p>Troque experiências com outras noivas vivendo o mesmo momento que você.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Suporte pela plataforma</h3>
-          <p>Tire dúvidas sobre o conteúdo das aulas sempre que precisar.</p>
-        </div>
+        <div class="feature-item"><h3>Checklist inteligente</h3><p>Checklist inteligente personalizado para o seu casamento. Tarefas organizadas mês a mês até o grande dia.</p></div>
+        <div class="feature-item"><h3>Orientação a cada decisão</h3><p>Cada tarefa decisiva vem acompanhada de uma orientação prática da assessora em vídeo para te ajudar a decidir com segurança.</p></div>
+        <div class="feature-item"><h3>Gab.IA, sua assessora 24h</h3><p>Tire dúvidas, peça orientações e receba ajuda em cada etapa do planejamento, disponível sempre que precisar.</p></div>
+        <div class="feature-item"><h3>Financeiro sem susto</h3><p>Veja seu orçamento distribuído por categoria e enxergue o todo antes de começar a contratar. Acompanhe cada gasto, parcelas e comprovantes em tempo real, tudo em um só lugar.</p></div>
+        <div class="feature-item"><h3>Fornecedores organizados</h3><p>Compare orçamentos, organize contratos e reuniões. Saiba exatamente o que perguntar em cada reunião, antes e depois de contratar.</p></div>
+        <div class="feature-item"><h3>Lista de Convidados e RSVP</h3><p>Crie seu save the date com a Gab.IA, organize suas listas A e B, confirme presenças (RSVP), mapeie mesas e ajuste as quantidades em tempo real.</p></div>
+        <div class="feature-item"><h3>Análise de contratos</h3><p>Envie os contratos dos seus fornecedores e a Gab.IA Contratos te ajuda a entender cláusulas, prazos e pontos de atenção antes de assinar.</p></div>
+        <div class="feature-item"><h3>Agenda inteligente</h3><p>Tenha todas as tarefas, compromissos e pagamentos organizados no mesmo calendário. Receba lembretes e nunca perca um prazo importante.</p></div>
+        <div class="feature-item"><h3>Calculadora inteligente</h3><p>Calcule doces, bebidas, lembrancinhas e outros itens na quantidade ideal para seus convidados.</p></div>
+        <div class="feature-item"><h3>Moodboard de inspirações</h3><p>Mais coerência e harmonia em todas as escolhas do seu casamento. Reúna suas inspirações com a ajuda do nosso Atalho Criativo e crie moodboards personalizados para compartilhar com seus fornecedores.</p></div>
+        <div class="feature-item"><h3>Trilha Sonora da Cerimônia</h3><p>Encontre inspirações de músicas para a sua cerimônia em playlists cuidadosamente selecionadas.</p></div>
+        <div class="feature-item"><h3>Programação completa do Grande Dia</h3><p>Da preparação ao fim da festa, receba o roteiro da cerimônia, o cronograma completo do dia e os documentos de coordenação prontos para compartilhar com sua cerimonialista.</p></div>
+        <div class="feature-item"><h3>Gab.IA Casa Nova</h3><p>Comece a vida no novo lar com mais praticidade: enxoval completo, primeiras compras, receitas e dicas para a rotina.</p></div>
+        <div class="feature-item"><h3>Acesso próprio para noivo e assessoria</h3><p>Convide seu noivo e sua assessora para acompanharem o planejamento com você. Cada um tem seu próprio login e acesso às informações do casamento.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- GALERIA CASAIS REAIS -->
+  <!-- FOTOS DE CASAIS - FAIXA EM MOVIMENTO -->
   <section class="gallery reveal">
     <div class="container">
-      <span class="eyebrow center">Histórias reais</span>
-      <h2 class="section-title center">Casais que já viveram essa jornada</h2>
-      <div class="gallery-carousel">
-        <button class="carousel-btn carousel-prev" aria-label="Foto anterior">‹</button>
-        <div class="gallery-track">
-          <img src="assets/img/casal-real-4-lustre.jpg" alt="Casal recém-casado se abraçando" class="gallery-photo">
-          <img src="assets/img/casal-real-1-cake-color.jpg" alt="Casal cortando o bolo do casamento" class="gallery-photo">
-          <img src="assets/img/casal-real-3-noiva-pb.jpg" alt="Noiva de vestido de renda em preto e branco" class="gallery-photo">
-          <img src="assets/img/casal-real-2-cake-pb.jpg" alt="Casal sorrindo ao cortar o bolo" class="gallery-photo">
-          <img src="assets/img/casal-real-5-veu-pb.jpg" alt="Noiva ajustando o véu" class="gallery-photo">
-          <img src="assets/img/casal-real-8-flavia-thales.jpg" alt="Flávia e Thales se emocionando durante a cerimônia" class="gallery-photo">
-          <img src="assets/img/casal-real-9-noiva-day.jpg" alt="Noiva com a madrinha em frente a um arco de flores" class="gallery-photo">
-        </div>
-        <button class="carousel-btn carousel-next" aria-label="Próxima foto">›</button>
+      <h2 class="section-title center">Casais que já viveram essa <em>jornada</em></h2>
+    </div>
+    <div class="photo-marquee">
+      <div class="photo-marquee-track">
+        <img src="assets/img/casal-real-4-lustre.jpg" alt="Casal recém-casado" class="photo-marquee-item">
+        <img src="assets/img/casal-real-1-cake-color.jpg" alt="Casal cortando o bolo" class="photo-marquee-item">
+        <img src="assets/img/casal-real-3-noiva-pb.jpg" alt="Noiva de vestido de renda" class="photo-marquee-item">
+        <img src="assets/img/casal-real-2-cake-pb.jpg" alt="Casal sorrindo" class="photo-marquee-item">
+        <img src="assets/img/casal-real-5-veu-pb.jpg" alt="Noiva ajustando o véu" class="photo-marquee-item">
+        <img src="assets/img/casal-real-8-flavia-thales.jpg" alt="Cerimônia emocionante" class="photo-marquee-item">
+        <img src="assets/img/casal-real-9-noiva-day.jpg" alt="Noiva em frente ao arco de flores" class="photo-marquee-item">
+      </div>
+      <div class="photo-marquee-track" aria-hidden="true">
+        <img src="assets/img/casal-real-4-lustre.jpg" alt="" class="photo-marquee-item">
+        <img src="assets/img/casal-real-1-cake-color.jpg" alt="" class="photo-marquee-item">
+        <img src="assets/img/casal-real-3-noiva-pb.jpg" alt="" class="photo-marquee-item">
+        <img src="assets/img/casal-real-2-cake-pb.jpg" alt="" class="photo-marquee-item">
+        <img src="assets/img/casal-real-5-veu-pb.jpg" alt="" class="photo-marquee-item">
+        <img src="assets/img/casal-real-8-flavia-thales.jpg" alt="" class="photo-marquee-item">
+        <img src="assets/img/casal-real-9-noiva-day.jpg" alt="" class="photo-marquee-item">
       </div>
     </div>
   </section>
 
-  <!-- GABIA -->
-  <section class="gabia reveal">
-    <div class="container gabia-grid">
-      <div class="gabia-copy">
-        <span class="eyebrow">✦ Novidade exclusiva</span>
-        <h2 class="section-title">Conheça a GabIA, sua assessora 24 horas</h2>
-        <p>A Jornada do Sim é mais que um curso — é uma plataforma completa de gestão para o seu casamento. E dentro dela, a <strong>GabIA</strong> está sempre disponível: uma inteligência artificial treinada no método da Gabriella, pronta pra responder qualquer dúvida sua, a qualquer hora do dia ou da noite.</p>
-        <ul class="gabia-list">
-          <li>✓ Tira dúvidas sobre fornecedores, contratos e orçamento na hora</li>
-          <li>✓ Te orienta em cada etapa do planejamento, sem esperar resposta</li>
-          <li>✓ Disponível 24h, direto na plataforma</li>
-        </ul>
-      </div>
-      <div class="gabia-visual">
-        <div class="gabia-badge">
-          <span>GabIA</span>
-          <small>assessora 24h</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE A GABI -->
+  <!-- AUTORIDADE / QUEM SOU EU -->
   <section class="about reveal">
     <div class="container about-grid">
-      <img src="assets/img/foto-gabriella.png" alt="Gabriella Batista" class="about-photo">
+      <div class="about-photo-wrap">
+        <img src="assets/img/gabi-nova.jpg" alt="Gabriella Batista" class="about-photo">
+      </div>
       <div class="about-copy">
         <span class="eyebrow">Quem sou eu</span>
-        <h2 class="section-title">Olá, eu sou a Gabi</h2>
-        <p>Sou assessora de casamentos e faço parte desse universo encantador desde 2017. Mestra em Direção de Protocolo e Organização de Eventos pela Universidad Europea de Madrid, já acompanhei mais de 450 casais no Brasil, Portugal, Espanha e EUA.</p>
-        <p>Reuni tudo o que aprendi nessa trajetória na Jornada do Sim — pra que toda noiva tenha acesso ao meu método, com clareza e leveza, do primeiro "SIM" até o altar.</p>
-        <div class="about-stats">
-          <div><strong>+8</strong><span>anos de experiência</span></div>
-          <div><strong>+450</strong><span>casais atendidos</span></div>
-          <div><strong>6 anos</strong><span>Prêmio Casamento Awards</span></div>
-        </div>
+        <h2 class="section-title">Nenhuma noiva sonha em passar meses preocupada.</h2>
+        <p>Ela sonha em viver cada escolha com entusiasmo, dividir esse momento com quem ama e chegar ao altar com a sensação de que valeu a pena.</p>
+        <p>Depois de acompanhar centenas de casais de diferentes partes do mundo, percebi que o maior desafio nunca foi escolher flores, fornecedores ou o vestido. Era lidar com a insegurança de não saber por onde começar e com o medo de esquecer algo importante.</p>
+        <p>Foi justamente para mudar essa experiência que criei a <strong>Jornada do Sim</strong>.</p>
+        <p>Aqui, tudo o que aprendi em mais de nove anos assessorando casamentos e como sócia de um espaço de eventos foi transformado em um caminho simples, organizado e acolhedor, para que você tenha mais confiança em cada decisão e mais tranquilidade para viver aquilo que realmente importa.</p>
+        <p>No fim das contas, meu trabalho nunca foi apenas organizar casamentos. Sempre foi ajudar casais a viverem esse capítulo com mais leveza e segurança.</p>
       </div>
+    </div>
+    <div class="container">
+      <div class="about-stats-grid">
+        <div class="about-stat"><strong>+9 anos</strong><span>de experiência<br>Brasil e Portugal</span></div>
+        <div class="about-stat"><strong>+450</strong><span>casamentos realizados</span></div>
+        <div class="about-stat"><strong>6 prêmios</strong><span>Casamentos Awards</span></div>
+        <div class="about-stat"><strong>Prêmio internacional</strong><span>pela Asociación Española de Protocolo (AEP)</span></div>
+        <div class="about-stat"><strong>Mestra</strong><span>em direção de protocolo e organização de eventos pela Universidad Europea de Madrid</span></div>
+        <div class="about-stat"><strong><a href="https://www.instagram.com/agabriellabatista" target="_blank" rel="noopener">@agabriellabatista</a></strong><span>no Instagram</span></div>
+      </div>
+      <blockquote class="about-quote">
+        <p>"A forma como você vive a jornada transforma a forma como você vive o grande dia."</p>
+        <cite>— Gabriella Batista</cite>
+      </blockquote>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- PROVA / DEPOIMENTOS - FAIXA EM MOVIMENTO -->
   <section class="testimonials reveal">
     <div class="container">
       <span class="eyebrow center">Depoimentos</span>
-      <h2 class="section-title center">Noivas que já confiaram no método da Gabi</h2>
-      <div class="testimonials-grid">
-        <blockquote class="testimonial-card">
-          <p>"Estava tudo lindo, harmonioso e do jeitinho que sonhamos. Obrigada por tornarem nosso dia leve, especial e inesquecível."</p>
-          <cite>Flaviana e Caio</cite>
-        </blockquote>
-        <blockquote class="testimonial-card">
-          <p>"Gabi foi simplesmente maravilhosa! Sensível, paciente e atenta a cada detalhe, captou até o que eu nem sabia que queria."</p>
-          <cite>Carol e Fernando</cite>
-        </blockquote>
-        <blockquote class="testimonial-card">
-          <p>"A sua organização, seu planejamento do início ao fim foi impecável! Agradecemos por todo profissionalismo."</p>
-          <cite>Sanny e Daniel</cite>
-        </blockquote>
-        <blockquote class="testimonial-card">
-          <p>"As reuniões de organização com a Gabi foram essenciais, ela realmente sabe o que está fazendo e como fazer."</p>
-          <cite>Raquel e Leonardo</cite>
-        </blockquote>
+      <h2 class="section-title center">Casais que inspiram a <em>Jornada do Sim</em></h2>
+      <p class="section-sub center">Alguns relatos de quem já viveu a experiência de um planejamento guiado, organizado, com mais clareza e menos estresse.</p>
+    </div>
+    <div class="testimonial-marquee">
+      <div class="testimonial-marquee-track">
+        <blockquote class="tm-card"><p>Oi Gabi! Nossa, nós estamos sem palavras!!! Foi tudo incrível, sensacional e inesquecível! Todos os convidados estão vindo elogiar tudo! Nós só temos a agradecer, não mudaríamos nada. Foi tudo perfeito do jeitinho que pensamos.</p><cite>Ana e Pedro</cite></blockquote>
+        <blockquote class="tm-card"><p>Oi Gabi! A gente quer agradecer, sem vocês nada disso teria acontecido. A sua organização, seu planejamento do início ao fim foi impecável! Agradecemos por todo profissionalismo, muito obrigada mais uma vez!</p><cite>Sanny e Daniel</cite></blockquote>
+        <blockquote class="tm-card"><p>Gabriella, SEM PALAVRAS! A gente tá no céu, foi melhor do que pensamos e idealizamos! Eu vou sentir saudade desse dia pra sempre, foi perfeito! Muito obrigada pelo carinho, por toda atenção, por deixar a gente seguro, vocês sabem o que estão fazendo!</p><cite>Olívia e Luiz</cite></blockquote>
+        <blockquote class="tm-card"><p>Fiquei bastante tempo pensando no que iria escrever, porque eu tô sem palavras! Você entendeu todas as minhas questões, meus desejos e transformou o sonho em realidade. Realmente captou muito bem nossa essência como casal. Muito obrigado por tudo!</p><cite>Tessy e Bill</cite></blockquote>
+        <blockquote class="tm-card"><p>A Gabi é maravilhosa, juro! Um dos motivos de ter fechado foi porque sou uma mulher muito ocupada. Ela passa segurança pra gente, profissionalismo! Foi uma grata surpresa, sempre atenciosa, impecável! A gente tava esperando uma coisa boa, mas superou!</p><cite>Kathleen e Christopher</cite></blockquote>
+        <blockquote class="tm-card"><p>Gabi foi simplesmente maravilhosa! Sensível, paciente e atenta a cada detalhe. Ela não só entendeu tudo o que eu queria, mas também captou o que eu nem sabia que queria, transformando tudo em uma celebração absolutamente inesquecível. Muito obrigada!</p><cite>Carol e Fernando</cite></blockquote>
+        <blockquote class="tm-card"><p>Fiquei encantada com o acolhimento e cuidado comigo e meu noivo. As reuniões com a Gabi foram essenciais, ela realmente sabe o que está fazendo e como fazer. Um trabalho de excelência surreal! Sempre que lembrar do meu casamento vou lembrar que tudo foi perfeito.</p><cite>Raquel e Leonardo</cite></blockquote>
+        <blockquote class="tm-card"><p>Gabriella foi impecável! Ela presta atenção em cada mínimo detalhe, que muitos a gente nem fazia ideia que tinha que resolver.</p><cite>Mellina</cite></blockquote>
+        <blockquote class="tm-card"><p>Toda a organização do casamento com a Gabi foi impecável. Atenta a TODOS os detalhes, desde a organização das mesas até a decoração. A nossa decoração ficou muito além das nossas expectativas! Recomendamos muito!</p><cite>Bruna</cite></blockquote>
+        <blockquote class="tm-card"><p>Vocês são sensacionais, cada um de vocês. Mas óbvio que não posso deixar de mencionar nossa cerimonialista paciente e querida Gabriella! Nosso coração é só gratidão! Nunca vamos esquecer!</p><cite>Karolyne</cite></blockquote>
+        <blockquote class="tm-card"><p>Eu não tenho palavras para agradecer, do fundo do coração. Sem dúvidas foi o dia mais feliz da minha vida. Todos os convidados elogiaram muito. Tudo saiu perfeito. Com toda certeza foi o melhor investimento que fizemos na nossa vida!</p><cite>Natália</cite></blockquote>
       </div>
-      <p class="testimonials-note">Depoimentos de casais atendidos pela assessoria da Gabriella — a mesma metodologia que está na Jornada do Sim.</p>
+      <div class="testimonial-marquee-track" aria-hidden="true">
+        <blockquote class="tm-card"><p>Oi Gabi! Nossa, nós estamos sem palavras!!! Foi tudo incrível, sensacional e inesquecível! Todos os convidados estão vindo elogiar tudo! Nós só temos a agradecer, não mudaríamos nada.</p><cite>Ana e Pedro</cite></blockquote>
+        <blockquote class="tm-card"><p>Oi Gabi! A gente quer agradecer, sem vocês nada disso teria acontecido. A sua organização, seu planejamento do início ao fim foi impecável!</p><cite>Sanny e Daniel</cite></blockquote>
+        <blockquote class="tm-card"><p>Gabriella, SEM PALAVRAS! A gente tá no céu, foi melhor do que pensamos e idealizamos! Eu vou sentir saudade desse dia pra sempre, foi perfeito!</p><cite>Olívia e Luiz</cite></blockquote>
+        <blockquote class="tm-card"><p>Você entendeu todas as minhas questões, meus desejos e transformou o sonho em realidade. Realmente captou muito bem nossa essência como casal.</p><cite>Tessy e Bill</cite></blockquote>
+        <blockquote class="tm-card"><p>A Gabi é maravilhosa, juro! Ela passa segurança pra gente, profissionalismo! Foi uma grata surpresa, sempre atenciosa, impecável!</p><cite>Kathleen e Christopher</cite></blockquote>
+      </div>
+    </div>
+    <div class="testimonial-marquee">
+      <div class="testimonial-marquee-track reverse">
+        <blockquote class="tm-card"><p>Desde o primeiro contato, o atendimento foi simplesmente impecável. Conduzido com muito cuidado, atenção e profissionalismo. Muito mais do que um serviço: entrega amor, cuidado e um atendimento personalizado. Indicamos MUITO, de olhos fechados!</p><cite>Bia</cite></blockquote>
+        <blockquote class="tm-card"><p>Obrigada Gabriella! Sua experiência e atenção aos detalhes fizeram toda diferença!</p><cite>Gy Muniz</cite></blockquote>
+        <blockquote class="tm-card"><p>A Gaby é maravilhosa, como disse quando entrei no salão lembrei dela, como se ela estivesse ali pondo a mão em cada detalhe! Obrigada por tanto! Foi incrível!</p><cite>Hosana</cite></blockquote>
+        <blockquote class="tm-card"><p>Tudo feito com muito carinho, dedicação e todo cuidado do mundo, com amor em cada detalhe. Tivemos uma ótima experiência do início ao fim. Estamos muito encantadas e ainda em êxtase.</p><cite>Mayla e Amanda</cite></blockquote>
+        <blockquote class="tm-card"><p>Desde o primeiro momento, todo o andamento até o grande dia foi tão organizado que ficamos seguros e com a certeza que daria certo. Confiamos de olhos fechados e foi muito além das nossas expectativas.</p><cite>Nathália</cite></blockquote>
+        <blockquote class="tm-card"><p>Nosso sentimento é de gratidão e felicidade pelo atendimento do início ao fim. Todos os detalhes respeitados com carinho e muito capricho. Não poderíamos ter feito uma escolha melhor. Nosso muito obrigado!</p><cite>Marco</cite></blockquote>
+        <blockquote class="tm-card"><p>A Gabi foi incrível em suas orientações e ajustes de cada detalhe. Vocês fazem parte da nossa história! Com muito carinho agradecemos todo profissionalismo e dedicação. Muito obrigado!</p><cite>Lygia e Edson</cite></blockquote>
+        <blockquote class="tm-card"><p>Desde o primeiro contato e toda assessoria que Gabi deu (super fofa e paciente!), demonstram que amam o que fazem! Tornou nosso dia mais especial do que já era!</p><cite>Priscila</cite></blockquote>
+        <blockquote class="tm-card"><p>Vocês me proporcionaram um serviço acima da excelência! Foi tudo perfeito e além do que eu imaginava. Casaria 30x com vocês. Minha mais sincera e eterna gratidão por ter feito meu dia inesquecível!</p><cite>Kauanna</cite></blockquote>
+        <blockquote class="tm-card"><p>Gente, o que é a Gabi?! Eu estou extasiada. Foi tudo tão perfeito, tão tranquilo. Faltam palavras pra agradecer, mas sobra amor e gratidão. Muito feliz por saber que a minha escolha foi a melhor escolha.</p><cite>Ethyenne e Marcelo</cite></blockquote>
+      </div>
+      <div class="testimonial-marquee-track reverse" aria-hidden="true">
+        <blockquote class="tm-card"><p>Desde o primeiro contato, o atendimento foi simplesmente impecável. Muito mais do que um serviço: entrega amor, cuidado e um atendimento personalizado. Indicamos MUITO!</p><cite>Bia</cite></blockquote>
+        <blockquote class="tm-card"><p>Obrigada Gabriella! Sua experiência e atenção aos detalhes fizeram toda diferença!</p><cite>Gy Muniz</cite></blockquote>
+        <blockquote class="tm-card"><p>A Gaby é maravilhosa! Como se ela estivesse ali pondo a mão em cada detalhe! Obrigada por tanto! Foi incrível!</p><cite>Hosana</cite></blockquote>
+        <blockquote class="tm-card"><p>Tudo feito com muito carinho, dedicação e todo cuidado do mundo. Estamos muito encantadas e ainda em êxtase.</p><cite>Mayla e Amanda</cite></blockquote>
+        <blockquote class="tm-card"><p>Confiamos de olhos fechados e foi muito além das nossas expectativas.</p><cite>Nathália</cite></blockquote>
+      </div>
     </div>
   </section>
 
-  <!-- PARA QUEM É -->
-  <section class="personas reveal">
+  <!-- PROVA - 2 DEPOIMENTOS EM VÍDEO -->
+  <section class="video-testimonials reveal">
     <div class="container">
-      <h2 class="section-title center">Pra quem é a Jornada do Sim</h2>
-      <div class="personas-grid">
-        <div class="persona-card">
-          <h3>A noiva que precisa economizar</h3>
-          <p>Quer um casamento lindo e bem planejado, dentro do orçamento, sem gastos desnecessários.</p>
+      <h2 class="section-title center">"Uma das coisas que mais quero agradecer é por você ter feito minha esposa conseguir relaxar e aproveitar o dia dela."</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls preload="metadata" playsinline poster="assets/img/ross-poster.jpg">
+            <source src="assets/video/ross.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
         </div>
-        <div class="persona-card">
-          <h3>A noiva independente e organizada</h3>
-          <p>Quer planejar tudo sozinha, mas com clareza, direção e ferramentas confiáveis.</p>
-        </div>
-        <div class="persona-card">
-          <h3>A noiva ansiosa</h3>
-          <p>Tem medo de esquecer detalhes ou fazer escolhas erradas. Busca leveza e um passo a passo firme.</p>
-        </div>
-        <div class="persona-card">
-          <h3>O casal sem tempo</h3>
-          <p>Rotina intensa, pouco tempo pra organizar tudo sozinho. Precisa de praticidade máxima.</p>
+        <div class="video-card">
+          <video controls preload="metadata" playsinline poster="assets/img/tayra-poster.jpg">
+            <source src="assets/video/tayra.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GARANTIA + PLANOS -->
-  <section class="guarantee reveal" id="planos">
-    <div class="container guarantee-inner">
-      <img src="assets/img/monograma-rosa.png" alt="" class="guarantee-icon" aria-hidden="true">
-      <h2 class="section-title">7 dias de garantia total</h2>
-      <p>Se por qualquer motivo você sentir que a Jornada do Sim não é pra você, é só pedir o reembolso em até 7 dias após a compra. Sem burocracia, sem perguntas. Seu dinheiro de volta, garantido.</p>
-      <a href="#" class="btn btn-primary btn-large">Quero garantir o meu acesso agora →</a>
-      <p class="guarantee-fineprint">Acesso por 18 meses · 100% online · Dados enviados por e-mail logo após a compra.</p>
+  <!-- PLANOS E PREÇOS -->
+  <section class="pricing reveal" id="planos">
+    <div class="container">
+      <span class="eyebrow center">Planos e preços</span>
+      <h2 class="section-title center">Escolha o plano ideal para a sua <em>jornada</em></h2>
+      <p class="section-sub center">Você tem acesso a todos os recursos da Jornada do Sim em qualquer plano. Escolha apenas o período de acesso ideal para o seu casamento. Pagamento único, sem mensalidade recorrente.</p>
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3 class="price-name">6 meses</h3>
+          <div class="price-value"><span class="price-installment">Até 12x R$21,41</span><span class="price-cash">ou R$257,00 à vista</span></div>
+          <ul class="price-features">
+            <li>Cronograma personalizado mês a mês</li>
+            <li>Gab.IA, sua assessora 24h</li>
+            <li>Orientação em vídeo para cada tarefa decisiva</li>
+            <li>Planejamento e controle financeiro</li>
+            <li>Fornecedores: orçamentos, contratos e reuniões</li>
+            <li>Convidados: save the date, listas A e B, RSVP, mapa de mesas</li>
+            <li>Agenda inteligente com lembretes</li>
+            <li>Análise de contratos pela Gab.IA</li>
+            <li>Calculadora inteligente</li>
+            <li>Moodboards de inspiração</li>
+            <li>Programação completa do Grande Dia</li>
+            <li>Acesso próprio para noivo e assessoria</li>
+            <li class="price-plus">+ Trilha Sonora da Cerimônia</li>
+            <li class="price-plus">+ Gab.IA Casa Nova</li>
+            <li class="price-plus">+ Comunidade exclusiva</li>
+            <li class="price-plus">+ Atualizações durante todo o plano</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-full">Contratar agora</a>
+        </div>
+
+        <div class="price-card price-card-featured">
+          <span class="price-badge">O mais popular</span>
+          <h3 class="price-name">12 meses</h3>
+          <div class="price-value"><span class="price-installment">Até 12x R$33,08</span><span class="price-cash">ou R$397,00 à vista</span><span class="price-economy">23% de economia</span></div>
+          <ul class="price-features">
+            <li>Cronograma personalizado mês a mês</li>
+            <li>Gab.IA, sua assessora 24h</li>
+            <li>Orientação em vídeo para cada tarefa decisiva</li>
+            <li>Planejamento e controle financeiro</li>
+            <li>Fornecedores: orçamentos, contratos e reuniões</li>
+            <li>Convidados: save the date, listas A e B, RSVP, mapa de mesas</li>
+            <li>Agenda inteligente com lembretes</li>
+            <li>Análise de contratos pela Gab.IA</li>
+            <li>Calculadora inteligente</li>
+            <li>Moodboards de inspiração</li>
+            <li>Programação completa do Grande Dia</li>
+            <li>Acesso próprio para noivo e assessoria</li>
+            <li class="price-plus">+ Trilha Sonora da Cerimônia</li>
+            <li class="price-plus">+ Gab.IA Casa Nova</li>
+            <li class="price-plus">+ Comunidade exclusiva</li>
+            <li class="price-plus">+ Atualizações durante todo o plano</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-full">Contratar agora</a>
+        </div>
+
+        <div class="price-card">
+          <h3 class="price-name">24 meses</h3>
+          <div class="price-value"><span class="price-installment">Até 12x R$58,08</span><span class="price-cash">ou R$697,00 à vista</span><span class="price-economy">32% de economia</span></div>
+          <ul class="price-features">
+            <li>Cronograma personalizado mês a mês</li>
+            <li>Gab.IA, sua assessora 24h</li>
+            <li>Orientação em vídeo para cada tarefa decisiva</li>
+            <li>Planejamento e controle financeiro</li>
+            <li>Fornecedores: orçamentos, contratos e reuniões</li>
+            <li>Convidados: save the date, listas A e B, RSVP, mapa de mesas</li>
+            <li>Agenda inteligente com lembretes</li>
+            <li>Análise de contratos pela Gab.IA</li>
+            <li>Calculadora inteligente</li>
+            <li>Moodboards de inspiração</li>
+            <li>Programação completa do Grande Dia</li>
+            <li>Acesso próprio para noivo e assessoria</li>
+            <li class="price-plus">+ Trilha Sonora da Cerimônia</li>
+            <li class="price-plus">+ Gab.IA Casa Nova</li>
+            <li class="price-plus">+ Comunidade exclusiva</li>
+            <li class="price-plus">+ Atualizações durante todo o plano</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-full">Contratar agora</a>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- DÚVIDAS FREQUENTES -->
   <section class="faq reveal">
     <div class="container">
-      <h2 class="section-title center">Ainda com dúvidas?</h2>
+      <span class="eyebrow center">Dúvidas frequentes</span>
+      <h2 class="section-title center">Perguntas que quase <em>toda noiva faz</em></h2>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Posso contratar só a Jornada do Sim, sem a assessoria online?</summary>
-          <p>Sim! A Jornada do Sim funciona de forma independente e pode ser adquirida separadamente, sem qualquer exigência de contratação da assessoria.</p>
+          <summary>A Jornada do Sim substitui uma assessora de casamento?</summary>
+          <p>A Jornada do Sim foi desenvolvida com base na experiência da Gabriella Batista e oferece orientação especializada para todas as etapas do planejamento. Ela não substitui uma assessora presencial no dia do casamento, mas te acompanha em tudo que vem antes. Com ou sem assessoria, você pode planejar seu casamento com a Jornada do Sim.</p>
         </details>
         <details class="faq-item">
-          <summary>Funciona para qualquer tipo de casamento?</summary>
-          <p>Sim! Civil, religioso, na praia, no campo ou no salão, grande ou íntimo — o conteúdo se adapta ao seu estilo, orçamento e data.</p>
+          <summary>Tenho alguma garantia?</summary>
+          <p>Sim. Você tem 7 dias de garantia: se não for pra você, é só pedir e devolvemos o seu dinheiro.</p>
         </details>
         <details class="faq-item">
-          <summary>Como funciona o acesso?</summary>
-          <p>A compra é feita pela Hotmart. Assim que o pagamento é aprovado, você recebe no seu e-mail os dados de acesso para começar imediatamente.</p>
+          <summary>Posso renovar ou fazer upgrade do meu plano?</summary>
+          <p>Sim. Os planos têm período fechado e não são renovados automaticamente. Sempre que desejar, você poderá fazer upgrade ou renovar o seu acesso pela sua conta. Além disso, enviaremos um e-mail de lembrete antes do vencimento do plano para que você não seja pega de surpresa.</p>
         </details>
         <details class="faq-item">
-          <summary>Quais são as formas de pagamento? Posso parcelar?</summary>
-          <p>Sim! O pagamento é feito com segurança pela Hotmart, com cartão de crédito parcelado, Pix e outras formas disponíveis no momento da compra.</p>
+          <summary>É difícil usar?</summary>
+          <p>O aplicativo é intuitivo e foi pensado exatamente para noivas que não têm experiência com casamentos ou tecnologia.</p>
         </details>
         <details class="faq-item">
-          <summary>Tenho suporte se tiver dúvidas durante o curso?</summary>
-          <p>Sim, o suporte acontece dentro da plataforma da Hotmart, pra esclarecer dúvidas relacionadas ao conteúdo das aulas.</p>
+          <summary>Como faço para acessar o aplicativo?</summary>
+          <p>O acesso é liberado imediatamente após a confirmação do pagamento. Acesse pelo navegador no celular, tablet ou computador com seu e-mail e senha. Se preferir, baixe o aplicativo Jornada do Sim, disponível para Android na Play Store.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O aplicativo funciona para qualquer tipo e prazo de casamento?</summary>
+          <p>Sim! Civil, religioso, na praia, no campo ou no salão. Grande ou íntimo. O aplicativo se adapta ao perfil e data do seu casamento, independente do prazo que tenha.</p>
         </details>
       </div>
     </div>
@@ -363,18 +461,38 @@
   <!-- CTA FINAL -->
   <section class="final-cta reveal">
     <div class="container">
-      <h2>O seu grande dia merece atenção de verdade</h2>
-      <p>Comece agora e planeje o seu casamento com a mesma clareza e segurança que já guiou mais de 450 casais ao altar.</p>
-      <a href="#planos" class="btn btn-primary btn-large">Começar minha Jornada do Sim →</a>
+      <h2>O casamento dos seus sonhos começa nas <em>decisões de hoje</em></h2>
+      <p>Quanto antes você começar, mais tempo terá para planejar com calma, fazer boas escolhas, economizar e aproveitar o noivado sem a sensação de estar perdida ou atrasada.</p>
+      <a href="#planos" class="btn btn-primary btn-large">Começar agora →</a>
     </div>
   </section>
 
 </main>
 
+<!-- SUPORTE EM CHAT (Gab.IA) -->
+<div id="chat-widget" class="chat-widget" hidden>
+  <button id="chat-toggle" class="chat-toggle" aria-label="Falar com a Gab.IA">
+    <span class="chat-toggle-icon">✦</span>
+    <span class="chat-toggle-label">Gab.IA</span>
+  </button>
+  <div id="chat-panel" class="chat-panel" hidden>
+    <div class="chat-header">
+      <span>Gab.IA · tire suas dúvidas sobre a oferta</span>
+      <button id="chat-close" class="chat-close" aria-label="Fechar">×</button>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div class="chat-suggestions" id="chat-suggestions"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" placeholder="Digite sua dúvida..." autocomplete="off">
+      <button type="submit" aria-label="Enviar">→</button>
+    </form>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container footer-inner">
     <img src="assets/img/logo-branco.png" alt="Jornada do Sim" class="footer-logo">
-    <p>© 2026 Jornada do Sim · Por Gabriella Batista · Todos os direitos reservados.</p>
+    <p>© 2026 Jornada do Sim · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de Uso</a></p>
   </div>
 </footer>
 
