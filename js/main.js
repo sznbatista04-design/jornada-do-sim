@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initFaq();
   initReveal();
-  initDiagnostico();
   initChat();
 });
 
@@ -37,66 +36,6 @@ function initReveal() {
   setTimeout(() => revealEls.forEach((el) => el.classList.add('in-view')), 2500);
 }
 
-/* ---------- Mini-diagnóstico ---------- */
-function initDiagnostico() {
-  const overlay = document.getElementById('diagnostico');
-  if (!overlay) return;
-
-  const steps = [...overlay.querySelectorAll('.diagnostico-step')];
-  const dots = [...overlay.querySelectorAll('.dot')];
-  const skipBtn = document.getElementById('diagnostico-skip');
-  const ctaBtn = document.getElementById('diagnostico-cta');
-  const resultTitle = document.getElementById('diagnostico-titulo');
-  const resultText = document.getElementById('diagnostico-texto');
-
-  const resultados = {
-    financeiro: { titulo: 'Você é a Noiva Estrategista', texto: 'Pra você, cada real importa. Na Jornada do Sim você vê seu orçamento por categoria, acompanha gastos e parcelas em tempo real e decide sem susto.' },
-    fornecedores: { titulo: 'Você é a Noiva Exigente', texto: 'Você quer fazer as escolhas certas. A Jornada do Sim te mostra o que perguntar em cada reunião e a Gab.IA analisa seus contratos antes de assinar.' },
-    organizacao: { titulo: 'Você é a Noiva Organizada', texto: 'Você não quer esquecer nada. O checklist e a agenda inteligente organizam cada etapa do seu casamento, com lembretes pra você nunca perder um prazo.' },
-    tempo: { titulo: 'Você é a Noiva Sem Tempo a Perder', texto: 'Sua rotina é corrida. A Jornada do Sim te mostra sempre o próximo passo e a Gab.IA responde suas dúvidas 24h, no seu ritmo.' }
-  };
-
-  document.body.classList.add('diagnostico-open');
-  let currentIndex = 0;
-  const answers = {};
-
-  const showStep = (index) => {
-    steps.forEach((step, i) => step.classList.toggle('active', i === index));
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-      dot.classList.toggle('done', i < index);
-    });
-    currentIndex = index;
-  };
-
-  const finish = () => {
-    const perfilKey = answers.perfil || 'organizacao';
-    const resultado = resultados[perfilKey] || resultados.organizacao;
-    resultTitle.textContent = resultado.titulo;
-    resultText.textContent = resultado.texto;
-    showStep(steps.length - 1);
-    if (dots[3]) dots[3].classList.add('done');
-  };
-
-  const closeDiagnostico = () => {
-    overlay.classList.add('is-closing');
-    document.body.classList.remove('diagnostico-open');
-    setTimeout(() => { overlay.style.display = 'none'; }, 500);
-  };
-
-  overlay.addEventListener('click', (event) => {
-    const option = event.target.closest('.diagnostico-option');
-    if (!option) return;
-    const [category, value] = option.dataset.answer.split(':');
-    answers[category] = value;
-    if (currentIndex < steps.length - 2) showStep(currentIndex + 1);
-    else finish();
-  });
-
-  skipBtn.addEventListener('click', closeDiagnostico);
-  ctaBtn.addEventListener('click', closeDiagnostico);
-}
-
 /* ---------- Chat widget (Gab.IA — FAQ da oferta) ---------- */
 function initChat() {
   const widget = document.getElementById('chat-widget');
@@ -114,7 +53,7 @@ function initChat() {
   // Base de respostas (exclusivamente sobre a oferta)
   const knowledge = [
     { keys: ['garantia', 'reembolso', 'devolve', 'arrepend', 'cancelar', 'devolução'], answer: 'Você tem 7 dias de garantia: se não for pra você, é só pedir e devolvemos o seu dinheiro, sem burocracia.' },
-    { keys: ['pagar', 'pagamento', 'parcel', 'cartão', 'cartao', 'pix', 'boleto', 'preço', 'preco', 'valor', 'quanto custa', 'custa'], answer: 'Os planos são pagamento único (sem mensalidade): 6 meses por R$257, 12 meses por R$397 (o mais popular) e 24 meses por R$697. Você pode pagar à vista ou parcelar no cartão em até 12x, além de Pix e boleto.' },
+    { keys: ['pagar', 'pagamento', 'parcel', 'cartão', 'cartao', 'pix', 'preço', 'preco', 'valor', 'quanto custa', 'custa'], answer: 'Os planos são pagamento único (sem mensalidade): 6 meses por R$257, 12 meses por R$397 (o mais popular) e 24 meses por R$697. Você pode pagar à vista ou parcelar no cartão de crédito em até 12x, ou via Pix.' },
     { keys: ['acesso', 'acessar', 'liberado', 'imediato', 'como recebo', 'login', 'entrar', 'baixar', 'aplicativo', 'app', 'play store', 'celular', 'tablet', 'computador'], answer: 'O acesso é liberado imediatamente após a confirmação do pagamento. Você acessa pelo navegador no celular, tablet ou computador com e-mail e senha — ou baixa o app Jornada do Sim, disponível para Android na Play Store.' },
     { keys: ['renovar', 'upgrade', 'renova', 'vencimento', 'expira'], answer: 'Os planos têm período fechado e não renovam automaticamente. Sempre que quiser, você pode fazer upgrade ou renovar pela sua conta. Enviamos um e-mail de lembrete antes do vencimento pra você não ser pega de surpresa.' },
     { keys: ['assessora', 'substitui', 'cerimonial', 'presencial'], answer: 'A Jornada do Sim te acompanha em tudo que vem antes do grande dia. Ela não substitui uma assessora presencial no dia do casamento, mas com ou sem assessoria você consegue planejar todo o seu casamento com ela.' },
