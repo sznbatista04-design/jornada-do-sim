@@ -176,7 +176,7 @@ section { padding: 88px 0; }
 /* ---------- Features ---------- */
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 32px; }
 .feature-item { border-left: 3px solid var(--romance); padding-left: 20px; }
-.feature-item h3 { font-size: 19px; margin-bottom: 8px; }
+.feature-item h3 { font-size: 19px; margin-bottom: 8px; font-weight: 700; }
 .feature-item p { color: #6b5457; font-size: 14px; }
 
 /* ---------- Photo marquee ---------- */
