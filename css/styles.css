@@ -329,6 +329,7 @@ section { padding: 88px 0; }
 .checkout-form { background: var(--branco); border-radius: 16px; padding: 32px; box-shadow: 0 20px 50px rgba(54,33,37,0.12); }
 .form-section { margin-bottom: 28px; }
 .form-section-title { font-size: 20px; margin-bottom: 16px; }
+.form-section-subtitle { font-size: 13px; color: #6b5457; margin: -10px 0 16px; }
 .form-group { margin-bottom: 16px; }
 .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; }
 .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--ameixa); margin-bottom: 6px; }
@@ -358,10 +359,24 @@ section { padding: 88px 0; }
 .order-summary-plan { display: flex; flex-direction: column; gap: 4px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(54,33,37,0.12); }
 .order-summary-plan strong { font-family: var(--font-display); font-size: 20px; color: var(--ameixa); }
 .order-summary-plan span { font-size: 13px; color: #6b5457; }
-.order-summary-list { list-style: none; margin-bottom: 20px; }
+.order-summary-list { list-style: none; margin-bottom: 16px; }
 .order-summary-list li { font-size: 13px; color: #4a3a3c; padding: 6px 0 6px 22px; position: relative; }
 .order-summary-list li::before { content: '✓'; position: absolute; left: 0; color: var(--romance); font-weight: 700; }
-.order-summary-total { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid rgba(54,33,37,0.12); font-weight: 600; color: var(--ameixa); }
+.order-summary-bonus { list-style: none; margin-bottom: 20px; padding-top: 16px; border-top: 1px dashed rgba(54,33,37,0.15); }
+.order-summary-bonus li { font-size: 13px; color: #4a3a3c; padding: 6px 0; display: flex; align-items: center; gap: 8px; }
+.bonus-tag {
+  display: inline-block; background: var(--dourado); color: var(--branco); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; flex-shrink: 0;
+}
+.order-summary-coupon { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(54,33,37,0.12); }
+.order-summary-coupon label { display: block; font-size: 13px; font-weight: 600; color: var(--ameixa); margin-bottom: 8px; }
+.order-summary-coupon-row { display: flex; gap: 8px; }
+.order-summary-coupon-row input {
+  flex: 1; min-width: 0; padding: 10px 12px; border-radius: 8px; border: 1.5px solid rgba(54,33,37,0.15);
+  font-family: var(--font-body); font-size: 13px; color: var(--texto); background: var(--branco);
+}
+.order-summary-coupon-row input:focus { outline: none; border-color: var(--romance); }
+.order-summary-total { display: flex; justify-content: space-between; align-items: center; padding-top: 4px; font-weight: 600; color: var(--ameixa); }
 .order-summary-total strong { font-family: var(--font-display); font-size: 24px; }
 
 .checkout-trust { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 28px; font-size: 14px; color: var(--ameixa); font-weight: 500; }

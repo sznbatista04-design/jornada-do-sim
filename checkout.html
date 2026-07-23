@@ -20,8 +20,13 @@
   envio de formulário, tokenização de cartão nem chamada à API do Asaas.
   Falta implementar: validações, tokenização segura do cartão (via SDK do
   Asaas, nunca em texto puro), criação da cobrança pela API, geração do
-  QR Code do Pix, e liberação de acesso após confirmação do pagamento
-  (webhook do Asaas).
+  QR Code do Pix, validação de cupom, e liberação de acesso após confirmação
+  do pagamento (webhook do Asaas).
+
+  DECISÃO A CONFIRMAR: incluímos campos de senha no formulário, assumindo
+  que a conta é criada na hora do checkout (a noiva já escolhe a senha ali).
+  Se o fluxo real do sistema for liberar acesso por e-mail depois do
+  pagamento, esses campos de senha devem ser removidos.
 -->
 
 <!-- CABEÇALHO -->
@@ -58,6 +63,7 @@
         <form class="checkout-form" novalidate>
           <div class="form-section">
             <h2 class="form-section-title">Seus dados</h2>
+            <p class="form-section-subtitle">Serão usados para criar seu acesso à plataforma.</p>
             <div class="form-group">
               <label for="nome">Nome completo</label>
               <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="off">
@@ -70,6 +76,16 @@
               <div class="form-group">
                 <label for="cpf">CPF/CNPJ</label>
                 <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" autocomplete="off">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha" autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label for="confirmar-senha">Confirmar senha</label>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Digite a senha novamente" autocomplete="new-password">
               </div>
             </div>
           </div>
@@ -128,7 +144,21 @@
             <li>Acesso completo à plataforma</li>
             <li>Gab.IA, sua assessora 24h</li>
             <li>Cronograma personalizado mês a mês</li>
+            <li>Planejamento e controle financeiro</li>
+            <li>Análise de contratos pela Gab.IA</li>
           </ul>
+          <ul class="order-summary-bonus">
+            <li><span class="bonus-tag">Bônus</span> Trilha Sonora da Cerimônia</li>
+            <li><span class="bonus-tag">Bônus</span> Gab.IA Casa Nova</li>
+            <li><span class="bonus-tag">Bônus</span> Comunidade exclusiva</li>
+          </ul>
+          <div class="order-summary-coupon">
+            <label for="cupom">Tem um cupom de desconto?</label>
+            <div class="order-summary-coupon-row">
+              <input type="text" id="cupom" placeholder="Digite o código">
+              <button type="button" class="btn btn-small btn-outline">Aplicar</button>
+            </div>
+          </div>
           <div class="order-summary-total">
             <span>Total</span>
             <strong id="summary-total">R$397,00</strong>
