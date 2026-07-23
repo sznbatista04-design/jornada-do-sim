@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar pagamento — Jornada do Sim</title>
+<meta name="description" content="Escolha seu plano e finalize o pagamento com segurança para começar sua Jornada do Sim.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/monograma-rosa.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Lexend+Exa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!--
+  NOTA PARA O DESENVOLVEDOR (sistema Jornada do Sim):
+  Esta página é uma REFERÊNCIA VISUAL do formulário de checkout — o HTML/CSS
+  pode ser reaproveitado como base, mas NADA aqui está funcional. Não há
+  envio de formulário, tokenização de cartão nem chamada à API do Asaas.
+  Falta implementar: validações, tokenização segura do cartão (via SDK do
+  Asaas, nunca em texto puro), criação da cobrança pela API, geração do
+  QR Code do Pix, e liberação de acesso após confirmação do pagamento
+  (webhook do Asaas).
+-->
+
+<!-- CABEÇALHO -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html"><img src="assets/img/logo-rosa.png" alt="Jornada do Sim" class="header-logo"></a>
+    <a href="index.html#planos" class="btn btn-small btn-outline">← Voltar aos planos</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- CABEÇALHO DO CHECKOUT -->
+  <section class="checkout-hero">
+    <div class="container checkout-hero-inner">
+      <span class="eyebrow center">Pagamento 100% seguro</span>
+      <h1 class="section-title center">Finalize sua assinatura da <em>Jornada do Sim</em></h1>
+      <p class="section-sub center">Confirme o plano escolhido para dar continuidade ao seu pagamento.</p>
+    </div>
+  </section>
+
+  <!-- SELEÇÃO DE PLANO -->
+  <section class="checkout-section">
+    <div class="container">
+
+      <div class="plan-tabs" role="tablist" aria-label="Escolha o plano">
+        <button type="button" class="plan-tab" data-plan="6" data-name="6 meses" data-price="257,00" role="tab">6 meses<br><small>R$257,00 à vista</small></button>
+        <button type="button" class="plan-tab" data-plan="12" data-name="12 meses" data-price="397,00" role="tab">12 meses<br><small>R$397,00 à vista</small></button>
+        <button type="button" class="plan-tab" data-plan="24" data-name="24 meses" data-price="697,00" role="tab">24 meses<br><small>R$697,00 à vista</small></button>
+      </div>
+
+      <div class="checkout-layout">
+
+        <form class="checkout-form" novalidate>
+          <div class="form-section">
+            <h2 class="form-section-title">Seus dados</h2>
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="off">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF/CNPJ</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" autocomplete="off">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2 class="form-section-title">Forma de pagamento</h2>
+            <div class="payment-toggle" role="tablist" aria-label="Forma de pagamento">
+              <button type="button" class="payment-option is-active" data-method="cartao">💳 Cartão de crédito</button>
+              <button type="button" class="payment-option" data-method="pix">Pix</button>
+            </div>
+
+            <div id="payment-cartao" class="payment-fields">
+              <div class="form-group">
+                <label for="numero-cartao">Número do cartão</label>
+                <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="nome-cartao">Nome impresso no cartão</label>
+                <input type="text" id="nome-cartao" placeholder="Como está no cartão" autocomplete="off">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="validade">Validade</label>
+                  <input type="text" id="validade" placeholder="MM/AA" autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" placeholder="000" autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="parcelas">Parcelas</label>
+                  <select id="parcelas">
+                    <option>1x sem juros</option>
+                    <option selected>12x</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div id="payment-pix" class="payment-fields" hidden>
+              <p class="pix-note">Depois de clicar em "Finalizar pagamento", você recebe um QR Code para pagar pelo app do seu banco.</p>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-full checkout-submit" id="checkout-submit">Finalizar pagamento — <span id="submit-price">R$397,00</span></button>
+          <p class="checkout-form-note">Ambiente ilustrativo — este formulário ainda não processa pagamentos de verdade.</p>
+        </form>
+
+        <aside class="order-summary">
+          <h2 class="form-section-title">Resumo do pedido</h2>
+          <div class="order-summary-plan">
+            <strong id="summary-plan-name">Jornada do Sim — 12 meses</strong>
+            <span id="summary-plan-price">R$397,00 à vista</span>
+          </div>
+          <ul class="order-summary-list">
+            <li>Acesso completo à plataforma</li>
+            <li>Gab.IA, sua assessora 24h</li>
+            <li>Cronograma personalizado mês a mês</li>
+          </ul>
+          <div class="order-summary-total">
+            <span>Total</span>
+            <strong id="summary-total">R$397,00</strong>
+          </div>
+        </aside>
+
+      </div>
+
+      <ul class="checkout-trust">
+        <li>🔒 Pagamento processado pelo Asaas</li>
+        <li>💳 Cartão em até 12x ou Pix</li>
+        <li>✓ 7 dias de garantia</li>
+      </ul>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="assets/img/logo-branco.png" alt="Jornada do Sim" class="footer-logo">
+    <p>© 2026 Jornada do Sim · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de Uso</a></p>
+  </div>
+</footer>
+
+<script src="js/checkout.js"></script>
+</body>
+</html>
