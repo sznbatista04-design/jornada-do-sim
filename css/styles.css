@@ -260,7 +260,7 @@ section { padding: 88px 0; }
 .price-features li { font-size: 13px; color: #4a3a3c; padding: 7px 0 7px 24px; position: relative; border-bottom: 1px solid rgba(54,33,37,0.06); }
 .price-features li::before { content: '✓'; position: absolute; left: 0; color: var(--romance); font-weight: 700; }
 .price-features .price-plus { color: var(--ameixa); font-weight: 500; }
-.price-features .price-plus::before { content: ''; }
+.price-features .price-plus::before { content: '+'; }
 
 /* ---------- FAQ ---------- */
 .faq-list { max-width: 720px; margin: 32px auto 0; }
@@ -363,11 +363,8 @@ section { padding: 88px 0; }
 .order-summary-list li { font-size: 13px; color: #4a3a3c; padding: 6px 0 6px 22px; position: relative; }
 .order-summary-list li::before { content: '✓'; position: absolute; left: 0; color: var(--romance); font-weight: 700; }
 .order-summary-bonus { list-style: none; margin-bottom: 20px; padding-top: 16px; border-top: 1px dashed rgba(54,33,37,0.15); }
-.order-summary-bonus li { font-size: 13px; color: #4a3a3c; padding: 6px 0; display: flex; align-items: center; gap: 8px; }
-.bonus-tag {
-  display: inline-block; background: var(--dourado); color: var(--branco); font-size: 10px; font-weight: 700;
-  letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; flex-shrink: 0;
-}
+.order-summary-bonus li { font-size: 13px; color: var(--ameixa); font-weight: 500; padding: 6px 0 6px 22px; position: relative; }
+.order-summary-bonus li::before { content: '+'; position: absolute; left: 0; color: var(--romance); font-weight: 700; }
 .order-summary-coupon { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(54,33,37,0.12); }
 .order-summary-coupon label { display: block; font-size: 13px; font-weight: 600; color: var(--ameixa); margin-bottom: 8px; }
 .order-summary-coupon-row { display: flex; gap: 8px; }
