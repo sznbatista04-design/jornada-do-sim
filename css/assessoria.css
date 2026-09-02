@@ -1,0 +1,386 @@
+/* ==========================================================================
+   ASSESSORIA INDIVIDUAL — Gabriella Batista
+   Página desenhada PRIMEIRO para o celular (mobile-first).
+   As regras dentro de "@media (min-width: 760px)" só valem em telas grandes.
+   ========================================================================== */
+
+:root {
+  /* Cores do brand guide da Jornada do Sim */
+  --ameixa: #362125;
+  --romance: #B68282;
+  --romance-light: #C09F9D;
+  --clareza: #DEEDF1;
+  --paz: #FBF3EF;          /* fundo creme */
+  --dourado: #C9A76A;
+  --branco: #FFFFFF;
+  --texto: #3A2E30;
+  --texto-suave: #6b5457;
+
+  /* Fontes pedidas: EB Garamond nos títulos, Lexend no corpo
+     (o Cormorant Garamond foi trocado por causa do bug de acento no "ê") */
+  --font-titulo: 'EB Garamond', Georgia, serif;
+  --font-corpo: 'Lexend', system-ui, sans-serif;
+
+  --largura-max: 1100px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-corpo);
+  color: var(--texto);
+  background: var(--paz);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* Espaçamento vertical entre seções (menor no celular, maior no desktop) */
+section { padding: 56px 0; }
+
+h1, h2, h3 {
+  font-family: var(--font-titulo);
+  color: var(--ameixa);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+em { font-style: italic; }
+strong { font-weight: 600; color: var(--ameixa); }
+
+.section-title {
+  font-size: clamp(25px, 6vw, 38px);
+  margin-bottom: 14px;
+}
+
+.section-sub {
+  color: var(--texto-suave);
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-corpo);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--romance);
+  margin-bottom: 12px;
+}
+
+.center { text-align: center; margin-left: auto; margin-right: auto; }
+.como-funciona .center,
+.planos .center,
+.faq .center { display: block; }
+
+/* --------------------------- Botões --------------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-corpo);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--romance), var(--ameixa));
+  color: var(--branco);
+  box-shadow: 0 8px 24px rgba(54, 33, 37, 0.25);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(54, 33, 37, 0.3); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--ameixa);
+  border: 1.5px solid var(--romance);
+}
+.btn-outline:hover { background: var(--romance); color: var(--branco); }
+
+.btn-small  { padding: 10px 18px; font-size: 14px; }
+.btn-large  { padding: 16px 30px; font-size: 16px; }
+.btn-full   { display: block; width: 100%; padding: 15px; font-size: 15px; }
+
+/* --------------------------- Cabeçalho --------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251, 243, 239, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(54, 33, 37, 0.08);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 22px;
+}
+.header-logo { height: 68px; width: auto; margin: -10px 0; }
+
+/* --------------------------- Hero --------------------------- */
+.hero {
+  position: relative;
+  padding: 44px 0 52px;
+  background: linear-gradient(165deg, var(--paz) 0%, var(--clareza) 70%, var(--romance-light) 150%);
+  overflow: hidden;
+  text-align: center;
+}
+.hero-faixa { position: absolute; opacity: 0.28; z-index: 1; pointer-events: none; }
+.hero-faixa-1 { top: -3%; right: -12%; width: 60%; }
+.hero-faixa-2 { bottom: -6%; left: -14%; width: 58%; }
+.hero-inner { position: relative; z-index: 2; max-width: 720px; }
+.hero-monograma { width: 52px; margin: 0 auto 18px; opacity: 0.9; }
+.hero h1 { font-size: clamp(28px, 8vw, 50px); margin-bottom: 18px; }
+.hero-sub { font-size: 16px; color: var(--texto-suave); margin: 0 auto 26px; max-width: 520px; }
+.hero-trust {
+  list-style: none;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 10px 18px;
+  margin-top: 26px;
+  font-size: 13px; color: var(--ameixa); font-weight: 500;
+}
+.hero-trust li { position: relative; padding-left: 16px; }
+.hero-trust li::before { content: '✓'; position: absolute; left: 0; color: var(--romance); font-weight: 700; }
+
+/* --------------------------- É pra você se... --------------------------- */
+.para-voce { background: var(--branco); }
+.dor-list { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+.dor-list li {
+  position: relative;
+  padding: 14px 16px 14px 46px;
+  background: var(--paz);
+  border-radius: 10px;
+  border-left: 3px solid var(--romance);
+  font-size: 15px;
+}
+.dor-list li::before {
+  content: '';
+  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--romance);
+}
+
+/* --------------------------- Como funciona --------------------------- */
+.como-funciona { background: linear-gradient(170deg, var(--paz), var(--clareza)); }
+.passos { list-style: none; margin: 22px 0 0; display: flex; flex-direction: column; gap: 22px; }
+.passo {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 22px 20px;
+  box-shadow: 0 8px 22px rgba(54, 33, 37, 0.06);
+}
+.passo-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--romance), var(--romance-light));
+  color: var(--branco); font-family: var(--font-titulo); font-size: 20px;
+  margin-bottom: 12px;
+}
+.passo h3 { font-size: 20px; margin-bottom: 6px; }
+.passo p { color: var(--texto-suave); font-size: 14px; }
+.como-funciona-foto {
+  margin-top: 28px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 44px rgba(54, 33, 37, 0.18);
+}
+.como-funciona-foto img { width: 100%; }
+
+/* --------------------------- Temas --------------------------- */
+.temas { background: var(--branco); }
+.temas-grid {
+  list-style: none;
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+  margin-top: 4px;
+}
+.temas-grid li {
+  padding: 13px 16px 13px 40px;
+  position: relative;
+  background: var(--paz);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ameixa);
+}
+.temas-grid li::before {
+  content: '✦';
+  position: absolute; left: 16px;
+  color: var(--dourado);
+}
+
+/* --------------------------- Benefícios --------------------------- */
+.beneficios { background: linear-gradient(170deg, var(--clareza), var(--paz)); }
+.beneficios-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+.beneficios-list li {
+  position: relative; padding-left: 30px; font-size: 15px; color: #4a3a3c;
+}
+.beneficios-list li::before {
+  content: '✓';
+  position: absolute; left: 0; top: 1px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--romance); color: var(--branco);
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* --------------------------- Quem é a Gabi --------------------------- */
+.quem-sou { background: var(--branco); }
+.quem-sou-grid { display: flex; flex-direction: column; gap: 26px; }
+.quem-sou-foto {
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 26px 52px rgba(54, 33, 37, 0.2);
+  max-width: 320px; margin: 0 auto;
+}
+.quem-sou-copy p { margin-bottom: 14px; color: #4a3a3c; }
+
+/* --------------------------- Investimento --------------------------- */
+.planos { background: linear-gradient(170deg, var(--paz), var(--clareza)); }
+.planos-grid { display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+.plano-card {
+  position: relative;
+  background: var(--branco);
+  border-radius: 14px;
+  padding: 28px 22px;
+  border: 1px solid rgba(54, 33, 37, 0.08);
+}
+.plano-card-destaque {
+  border: 2px solid var(--romance);
+  box-shadow: 0 22px 46px rgba(54, 33, 37, 0.16);
+}
+.plano-selo {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--romance); color: var(--branco);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 20px; white-space: nowrap;
+}
+.plano-nome {
+  font-size: 24px; margin-bottom: 14px;
+  text-transform: uppercase; letter-spacing: 0.02em;
+}
+.plano-preco { margin-bottom: 8px; }
+.plano-parcela {
+  display: block;
+  font-family: var(--font-titulo); font-size: 28px; font-weight: 600; color: var(--ameixa);
+}
+.plano-avista { display: block; font-size: 13px; color: var(--texto-suave); margin-top: 4px; }
+.plano-economia {
+  display: inline-block; margin-bottom: 16px;
+  background: var(--dourado); color: var(--branco);
+  font-size: 12px; font-weight: 600;
+  padding: 4px 12px; border-radius: 20px;
+}
+.plano-itens { list-style: none; margin: 14px 0 24px; }
+.plano-itens li {
+  font-size: 13px; color: #4a3a3c;
+  padding: 8px 0 8px 24px; position: relative;
+  border-bottom: 1px solid rgba(54, 33, 37, 0.06);
+}
+.plano-itens li::before {
+  content: '✓'; position: absolute; left: 0;
+  color: var(--romance); font-weight: 700;
+}
+
+/* --------------------------- FAQ --------------------------- */
+.faq { background: var(--branco); }
+.faq-list { max-width: 720px; margin: 24px auto 0; }
+.faq-item {
+  background: var(--paz);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 10px;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600; color: var(--ameixa);
+  list-style: none;
+  font-size: 15px;
+  display: flex; justify-content: space-between; gap: 14px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-titulo); font-size: 22px; color: var(--romance);
+  line-height: 1;
+}
+.faq-item[open] summary::after { content: '–'; }
+.faq-item p { margin-top: 12px; color: var(--texto-suave); font-size: 14px; }
+
+/* --------------------------- Chamada final --------------------------- */
+.final-cta { background: var(--ameixa); color: var(--branco); text-align: center; }
+.final-cta h2 { color: var(--clareza); margin-bottom: 14px; font-size: clamp(25px, 6vw, 36px); }
+.final-cta p { max-width: 520px; margin: 0 auto 26px; opacity: 0.85; font-size: 15px; }
+
+/* --------------------------- Rodapé --------------------------- */
+.site-footer { background: var(--ameixa); padding: 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.footer-logo { height: 30px; opacity: 0.85; }
+.footer-inner p { font-size: 12px; color: rgba(255, 255, 255, 0.6); }
+.footer-inner a { color: rgba(255, 255, 255, 0.85); text-decoration: none; }
+.footer-inner a:hover { text-decoration: underline; }
+
+/* --------------------------- Aparecer ao rolar --------------------------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+
+/* ==========================================================================
+   TELAS GRANDES (tablet / computador) — a partir de 760px de largura
+   ========================================================================== */
+@media (min-width: 760px) {
+  section { padding: 88px 0; }
+
+  .header-logo { height: 92px; margin: -16px 0; }
+
+  .hero { padding: 72px 0 68px; }
+  .hero-faixa-1 { width: 38%; right: -6%; }
+  .hero-faixa-2 { width: 36%; left: -8%; }
+  .hero-sub { font-size: 18px; }
+  .hero-trust { font-size: 14px; gap: 22px; }
+
+  .dor-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .passos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .como-funciona-foto { max-width: 620px; margin-left: auto; margin-right: auto; }
+
+  .temas-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .beneficios-list { max-width: 640px; }
+
+  .quem-sou-grid {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+  .quem-sou-foto { flex: 0 0 340px; margin: 0; }
+
+  .planos-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .plano-card { flex: 1; }
+
+  .final-cta p { font-size: 16px; }
+}
