@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ASSESSORIA INDIVIDUAL — comportamento da página
+   CONSULTORIA INDIVIDUAL COM GABI — comportamento da página
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -14,17 +14,17 @@
 const WHATSAPP_NUMERO = "5599999999999";
 
 /* Mensagem que já vem escrita quando a noiva abre o WhatsApp */
-const MENSAGEM_PADRAO = "Oi, Gabi! Quero agendar a assessoria individual.";
+const MENSAGEM_PADRAO = "Oi, Gabi! Quero agendar a consultoria individual.";
 
 /* --------------------------------------------------------------------------
    2) Monta os links de WhatsApp em todos os botões com a classe "js-whatsapp".
-   Se o botão tiver um atributo data-plano (ex: "pacote de 3 sessões"),
+   Se o botão tiver um atributo data-plano (ex: "pacote com 3 sessões"),
    a mensagem fica mais específica.
    -------------------------------------------------------------------------- */
 document.querySelectorAll(".js-whatsapp").forEach(function (botao) {
   var plano = botao.getAttribute("data-plano");
   var texto = plano
-    ? "Oi, Gabi! Quero agendar a assessoria individual (" + plano + ")."
+    ? "Oi, Gabi! Quero agendar a consultoria individual (" + plano + ")."
     : MENSAGEM_PADRAO;
 
   botao.setAttribute(
@@ -36,16 +36,10 @@ document.querySelectorAll(".js-whatsapp").forEach(function (botao) {
 });
 
 /* --------------------------------------------------------------------------
-   3) Efeito de "aparecer suave" conforme a pessoa rola a página.
-   Marca as seções com a classe .reveal e as revela quando entram na tela.
+   3) Movimento: cada bloco marcado com .reveal aparece suave ao entrar na tela.
    Failsafe: se algo falhar, tudo fica visível depois de 2,5s.
    -------------------------------------------------------------------------- */
-var alvos = document.querySelectorAll(
-  ".para-voce .container, .como-funciona .container, .temas .container, " +
-  ".beneficios .container, .quem-sou-grid, .planos .container, .faq .container, .final-cta .container"
-);
-
-alvos.forEach(function (el) { el.classList.add("reveal"); });
+var alvos = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
   var observador = new IntersectionObserver(function (entradas) {
