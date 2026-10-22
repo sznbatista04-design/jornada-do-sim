@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Consultoria individual com Gabi — Jornada do Sim</title>
+<meta name="description" content="Um encontro individual de 1 hora, pelo Google Meet, para esclarecer suas dúvidas e receber orientação sobre as decisões do seu casamento. Com Gabriella Batista.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F8F2EE">
+
+<meta property="og:title" content="Consultoria individual com Gabi">
+<meta property="og:description" content="Um olhar profissional para as decisões do seu casamento.">
+<meta property="og:image" content="assets/img/gabi-quem-sou-eu.jpg">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/img/monograma-rosa.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/consultoria-v2.css">
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ======================= CABEÇALHO ======================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <img src="assets/img/logo-rosa.png" alt="Jornada do Sim" class="header-logo">
+    <a href="#" class="btn btn-cta btn-sm js-whatsapp">Agendar</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="topo">
+    <img src="assets/img/faixa-2-rosa.svg" alt="" class="hero-faixa hero-faixa-1" aria-hidden="true">
+    <img src="assets/img/faixa-1-rosa.svg" alt="" class="hero-faixa hero-faixa-2" aria-hidden="true">
+
+    <div class="container hero-grid">
+      <div class="hero-texto">
+        <span class="eyebrow">Consultoria individual com Gabi</span>
+        <h1 aria-label="Uma hora só sua para falar de orçamento, fornecedores, convidados, cerimônia, reta final e decisões em aberto.">
+          <span aria-hidden="true">Uma hora só sua para falar de</span>
+          <span class="rot" aria-hidden="true">
+            <span class="rot-w is-on">orçamento.</span>
+            <span class="rot-w">fornecedores.</span>
+            <span class="rot-w">convidados.</span>
+            <span class="rot-w">cerimônia.</span>
+            <span class="rot-w">reta final.</span>
+            <span class="rot-w">decisões em aberto.</span>
+          </span>
+        </h1>
+        <p class="hero-sub">Um olhar profissional para as decisões do seu casamento, em um encontro individual de 1 hora pelo Google Meet.</p>
+        <a href="#" class="btn btn-cta btn-large js-whatsapp">Agendar consultoria</a>
+        <p class="hero-note">Atendimento 100% individual · 1 hora · Google Meet</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="arch-wrap">
+          <div class="arch">
+            <img src="assets/img/gabi-quem-sou-eu.jpg" alt="Gabriella Batista" fetchpriority="high">
+          </div>
+        </div>
+        <span class="chip chip-1"><b>+450</b> casamentos<br>acompanhados</span>
+        <span class="chip chip-2"><b>1h</b> no Google Meet</span>
+        <span class="chip chip-3">Quase <b>10 anos</b> de experiência</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FAIXA EM MOVIMENTO ======================= -->
+  <section class="band" aria-label="Temas da consultoria">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Orçamento e gastos</span><span class="sep">✦</span>
+        <span>Fornecedores e propostas</span><span class="sep">✦</span>
+        <span>Lista de convidados</span><span class="sep">✦</span>
+        <span>Cerimônia e recepção</span><span class="sep">✦</span>
+        <span>Organização da reta final</span><span class="sep">✦</span>
+        <span>Decisões em aberto</span><span class="sep">✦</span>
+        <span>Uma hora só sua</span><span class="sep">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INTRO (texto que acende ao rolar) ======================= -->
+  <section class="secao intro">
+    <div class="container">
+      <p class="fill" data-fill>Tem uma dúvida importante, uma decisão em aberto ou alguma questão do casamento que gostaria de conversar com uma profissional?</p>
+      <p class="intro-sub reveal">Na consultoria individual, você tem um encontro comigo para <strong>esclarecer suas dúvidas e receber orientação sobre os pontos do seu casamento que fazem mais sentido para você naquele momento.</strong></p>
+    </div>
+  </section>
+
+  <!-- ======================= O QUE PODEMOS CONVERSAR (interativo) ======================= -->
+  <section class="secao temas">
+    <div class="container">
+      <span class="eyebrow">O que podemos conversar?</span>
+      <h2 class="secao-titulo">Qual é a sua dúvida hoje?</h2>
+      <p class="temas-sub">A consultoria é personalizada de acordo com as questões que você deseja levar para o encontro. Escolha um tema e veja como podemos trabalhar.</p>
+
+      <div class="topics" id="topics" role="group" aria-label="Temas da consultoria"></div>
+
+      <div class="topic-panel" id="topicPanel" aria-live="polite">
+        <span class="tp-label">Como podemos trabalhar isso</span>
+        <h3 id="tpTitle"></h3>
+        <p id="tpText"></p>
+        <a href="#" class="btn btn-cta tp-cta js-whatsapp" id="tpCta">Quero conversar sobre isso</a>
+      </div>
+
+      <p class="nota">A quantidade de temas abordados dependerá da complexidade de cada questão e do tempo disponível na sessão.</p>
+    </div>
+  </section>
+
+  <!-- ======================= COMO FUNCIONA (linha do tempo) ======================= -->
+  <section class="secao como">
+    <div class="container">
+      <span class="eyebrow center">Do primeiro contato ao resumo final</span>
+      <h2 class="secao-titulo center">Como funciona?</h2>
+
+      <ol class="timeline" id="timeline">
+        <li class="tl-step">
+          <span class="tl-badge">1</span>
+          <div class="tl-card">
+            <h3>Você me conta o que precisa</h3>
+            <p>Antes da consultoria, você responde a um formulário contando <strong>suas principais dúvidas e os pontos que deseja conversar comigo</strong>. Quanto mais contexto você compartilhar, melhor consigo preparar nosso encontro.</p>
+          </div>
+        </li>
+        <li class="tl-step">
+          <span class="tl-badge">2</span>
+          <div class="tl-card">
+            <h3>Eu preparo nossa sessão</h3>
+            <p>Com base nas suas respostas, organizo previamente os assuntos que serão tratados para aproveitarmos melhor o tempo juntas.</p>
+          </div>
+        </li>
+        <li class="tl-step">
+          <span class="tl-badge">3</span>
+          <div class="tl-card">
+            <h3>Nos encontramos online</h3>
+            <p>A consultoria tem duração de <strong>1 hora</strong> e acontece pelo <strong>Google Meet</strong>. Durante o encontro, conversamos sobre suas dúvidas e trabalhamos os pontos que forem possíveis dentro do tempo da sessão.</p>
+          </div>
+        </li>
+        <li class="tl-step">
+          <span class="tl-badge">4</span>
+          <div class="tl-card">
+            <h3>Você recebe um resumo e os próximos passos</h3>
+            <p>Depois da consultoria, envio um <strong>resumo dos principais pontos que conversamos e dos próximos passos definidos</strong>, para ficar mais fácil colocar tudo em prática.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================= O QUE VOCÊ LEVA ======================= -->
+  <section class="secao leva">
+    <div class="container">
+      <span class="eyebrow">O que você leva desse encontro</span>
+      <h2 class="secao-titulo">Uma hora que rende semanas de tranquilidade.</h2>
+      <ul class="tiles stagger">
+        <li class="tile"><i>✓</i><span>Clareza sobre o próximo passo do seu planejamento.</span></li>
+        <li class="tile"><i>✓</i><span>Prioridades definidas para o momento em que você está.</span></li>
+        <li class="tile"><i>✓</i><span>Mais segurança para decidir, com menos ansiedade.</span></li>
+        <li class="tile"><i>✓</i><span>Um resumo por escrito para colocar tudo em prática.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= QUEM VAI TE ATENDER ======================= -->
+  <section class="secao dark gabi">
+    <div class="container gabi-grid">
+      <div class="gabi-foto reveal">
+        <div class="arch-wrap arch-wrap-sm">
+          <div class="arch">
+            <img src="assets/img/gabi-nova.jpg" alt="Gabriella Batista em atendimento online" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="gabi-copy reveal">
+        <span class="eyebrow eyebrow-light">Quem vai te atender</span>
+        <h2 class="secao-titulo">Gabriella Batista</h2>
+        <p>Há quase uma década eu acompanho noivas em todas as etapas do casamento — já foram mais de 450 histórias guiadas até o altar.</p>
+        <p>Na consultoria, levo toda essa vivência para uma conversa direta, acolhedora e focada no que realmente importa para você.</p>
+        <ul class="stats" id="stats">
+          <li class="stat"><strong><span class="pre">+</span><span data-count="450">450</span></strong><span>casamentos acompanhados</span></li>
+          <li class="stat"><strong><small>quase</small><span data-count="10">10</span></strong><span>anos de experiência</span></li>
+          <li class="stat"><strong><span data-count="1">1</span>h</strong><span>só sua, pelo Google Meet</span></li>
+          <li class="stat"><strong><span data-count="100">100</span>%</strong><span>atendimento individual</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FOTOS EM MOVIMENTO ======================= -->
+  <section class="secao galeria">
+    <div class="container">
+      <span class="eyebrow center">Mais de 450 casamentos</span>
+      <h2 class="secao-titulo center">Histórias que a Gabi já ajudou a levar até o altar</h2>
+    </div>
+    <div class="marquee marquee-photos">
+      <div class="marquee-track gallery-track">
+        <img src="assets/img/casal-real-12-barco.jpg" alt="Casal abraçado à beira-mar" loading="lazy">
+        <img src="assets/img/casal-real-1-cake-color.jpg" alt="Casal cortando o bolo" loading="lazy">
+        <img src="assets/img/casal-real-3-noiva-pb.jpg" alt="Noiva de vestido de renda" loading="lazy">
+        <img src="assets/img/casal-real-14-farol.jpg" alt="Casal junto a um farol à beira-mar" loading="lazy">
+        <img src="assets/img/casal-real-5-veu-pb.jpg" alt="Noiva ajustando o véu" loading="lazy">
+        <img src="assets/img/casal-real-2-cake-pb.jpg" alt="Casal sorrindo" loading="lazy">
+        <img src="assets/img/casal-real-15-coluna.jpg" alt="Casal abraçado entre colunas de pedra" loading="lazy">
+        <img src="assets/img/casal-real-8-flavia-thales.jpg" alt="Cerimônia emocionante" loading="lazy">
+        <img src="assets/img/casal-real-10-paris.jpg" alt="Casal em Paris" loading="lazy">
+        <img src="assets/img/casal-real-13-fonte.jpg" alt="Casal sorrindo em frente a uma fonte" loading="lazy">
+        <img src="assets/img/casal-real-4-lustre.jpg" alt="Casal recém-casado" loading="lazy">
+        <img src="assets/img/casal-real-11-jardim.jpg" alt="Casal se beijando sob um arco de jardim" loading="lazy">
+        <img src="assets/img/casal-real-9-noiva-day.jpg" alt="Noiva em frente ao arco de flores" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= DEPOIMENTOS ======================= -->
+  <section class="secao depoimentos">
+    <div class="container">
+      <span class="eyebrow center">Depoimentos</span>
+      <h2 class="secao-titulo center">Quem já foi acompanhada pela Gabi</h2>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track tm-track">
+        <blockquote class="tm-card"><p>Gabriella foi impecável! Ela presta atenção em cada mínimo detalhe, que muitos a gente nem fazia ideia que tinha que resolver.</p><cite>Mellina</cite></blockquote>
+        <blockquote class="tm-card"><p>Gabi foi simplesmente maravilhosa! Sensível, paciente e atenta a cada detalhe. Ela não só entendeu tudo o que eu queria, mas também captou o que eu nem sabia que queria.</p><cite>Carol e Fernando</cite></blockquote>
+        <blockquote class="tm-card"><p>Ela passa segurança pra gente, profissionalismo! Foi uma grata surpresa, sempre atenciosa, impecável! A gente tava esperando uma coisa boa, mas superou!</p><cite>Kathleen e Christopher</cite></blockquote>
+        <blockquote class="tm-card"><p>As reuniões com a Gabi foram essenciais, ela realmente sabe o que está fazendo e como fazer. Um trabalho de excelência surreal!</p><cite>Raquel e Leonardo</cite></blockquote>
+        <blockquote class="tm-card"><p>Obrigada Gabriella! Sua experiência e atenção aos detalhes fizeram toda diferença!</p><cite>Gy Muniz</cite></blockquote>
+        <blockquote class="tm-card"><p>Desde o primeiro momento, tudo foi tão organizado que ficamos seguros e com a certeza que daria certo. Confiamos de olhos fechados.</p><cite>Nathália</cite></blockquote>
+        <blockquote class="tm-card"><p>A Gabi foi incrível em suas orientações e ajustes de cada detalhe. Com muito carinho agradecemos todo profissionalismo e dedicação.</p><cite>Lygia e Edson</cite></blockquote>
+        <blockquote class="tm-card"><p>Obrigada pelo carinho, por toda atenção, por deixar a gente seguro, vocês sabem o que estão fazendo!</p><cite>Olívia e Luiz</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INVESTIMENTO ======================= -->
+  <section class="secao planos" id="investimento">
+    <div class="container">
+      <span class="eyebrow center">Investimento</span>
+      <h2 class="secao-titulo center">Escolha o formato que faz sentido pra você</h2>
+      <div class="planos-grid stagger">
+
+        <div class="plano">
+          <h3 class="plano-nome">Sessão individual</h3>
+          <p class="plano-preco">R$&nbsp;300</p>
+          <p class="plano-linha">1 hora de consultoria</p>
+          <p>Pagamento por PIX ou cartão em até <strong>12x de R$&nbsp;25,81</strong>.</p>
+          <a href="#" class="btn btn-cta btn-full js-whatsapp" data-plano="sessão individual">Agendar consultoria</a>
+        </div>
+
+        <div class="plano">
+          <h3 class="plano-nome">Pacote com 3 sessões</h3>
+          <p class="plano-preco">R$&nbsp;720</p>
+          <p class="plano-linha">3 sessões de 1 hora</p>
+          <p>Para quem deseja contar com minha orientação em diferentes momentos do planejamento.</p>
+          <p>Você pode distribuir os encontros de acordo com as necessidades que surgirem ao longo do planejamento, dentro de um prazo de 6 meses.</p>
+          <a href="#" class="btn btn-cta btn-full js-whatsapp" data-plano="pacote com 3 sessões">Agendar consultoria</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FAQ ======================= -->
+  <section class="secao faq">
+    <div class="container">
+      <span class="eyebrow center">Perguntas frequentes</span>
+      <h2 class="secao-titulo center">Ainda com dúvida? Talvez esteja aqui.</h2>
+      <div class="faq-list stagger">
+        <details class="faq-item">
+          <summary>Como recebo o link do Google Meet?</summary>
+          <p>Depois de agendar e escolher o horário, eu envio o link do Meet pelo WhatsApp e por e-mail.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Preciso mesmo preencher o formulário antes?</summary>
+          <p>Sim. É ele que me permite preparar o encontro sob medida para o seu caso — sem ele, a sessão rende bem menos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Posso remarcar?</summary>
+          <p>Pode, avisando com pelo menos 24 horas de antecedência pelo WhatsApp.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O pacote de 3 sessões tem prazo para usar?</summary>
+          <p>Sim, as 3 sessões valem por 6 meses a partir da primeira.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Serve para qualquer fase do casamento?</summary>
+          <p>Sim, desde o "acabei de noivar e não sei por onde começar" até a reta final, na semana do casamento.</p>
+        </details>
+        <details class="faq-item">
+          <summary>É a mesma coisa que a Jornada do Sim?</summary>
+          <p>Não. A Jornada do Sim é a plataforma que te guia no seu ritmo. Aqui é um atendimento individual e ao vivo comigo, olhando para o seu caso específico.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CHAMADA FINAL ======================= -->
+  <section class="secao dark final" id="final">
+    <div class="container final-inner reveal">
+      <span class="cta-icone" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 20.5S3.5 14.7 3.5 8.9C3.5 6.2 5.6 4 8.3 4c1.8 0 3.1.9 3.7 2.2C12.6 4.9 13.9 4 15.7 4c2.7 0 4.8 2.2 4.8 4.9 0 5.8-8.5 11.6-8.5 11.6z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <h2 class="secao-titulo">Quer conversar comigo sobre o seu casamento?</h2>
+      <p>Clique abaixo para solicitar seu agendamento pelo WhatsApp.</p>
+      <p>Você receberá as opções de horários disponíveis e as orientações para confirmar sua consultoria.</p>
+      <a href="#" class="btn btn-light btn-large js-whatsapp">Agendar consultoria</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= RODAPÉ ======================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="assets/img/monograma-rosa.png" alt="Jornada do Sim" class="footer-logo">
+    <p class="assinatura">Sua jornada. Seu jeito. Seu sim.</p>
+    <p class="footer-mini">© 2026 Gabriella Batista · Jornada do Sim</p>
+    <p class="footer-mini">
+      <a href="privacidade.html">Política de Privacidade</a> ·
+      <a href="termos.html">Termos de Uso</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Botão fixo no celular -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#" class="btn btn-cta btn-full js-whatsapp">Agendar consultoria</a>
+</div>
+
+<script src="js/consultoria-v2.js"></script>
+</body>
+</html>
