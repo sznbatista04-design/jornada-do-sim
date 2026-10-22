@@ -275,7 +275,8 @@ strong { font-weight: 600; color: var(--plum); }
 .plano p + p { margin-top: 12px; }
 .plano p.plano-preco { font-family: var(--font-titulo); font-size: 42px; font-weight: 600; line-height: 1; color: var(--terracota); margin: 0 0 8px; }
 .plano p.plano-linha { font-weight: 600; color: var(--plum); margin-bottom: 8px; }
-.plano .btn-cta { margin-top: 22px; }
+.plano > p:last-of-type { margin-bottom: 22px; }
+.plano .btn-cta { margin-top: auto; }
 
 /* --------------------------- FAQ --------------------------- */
 .faq { background: #fff; }
