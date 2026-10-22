@@ -12,13 +12,11 @@ const MENSAGEM_PADRAO = "Oi, Gabi! Quero agendar a consultoria individual.";
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Monta o link do WhatsApp de um botão (usa data-plano e data-tema, se existirem) */
+/* Monta o link do WhatsApp de um botão (usa data-plano, se existir) */
 function montarWhatsapp(botao) {
   var plano = botao.getAttribute("data-plano");
-  var tema = botao.getAttribute("data-tema");
   var texto = MENSAGEM_PADRAO;
   if (plano) texto = "Oi, Gabi! Quero agendar a consultoria individual (" + plano + ").";
-  if (tema) texto = "Oi, Gabi! Quero agendar a consultoria individual e gostaria de conversar sobre: " + tema + ".";
   botao.setAttribute("href", "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(texto));
   botao.setAttribute("target", "_blank");
   botao.setAttribute("rel", "noopener");
@@ -56,6 +54,32 @@ if (!reduzMovimento) {
   });
 }
 
+/* Fotos da galeria: só baixam quando a pessoa se aproxima da seção.
+   (Evita carregar ~1 MB de fotos de uma vez no começo, o que pesa no celular.) */
+(function () {
+  var secao = document.querySelector(".galeria");
+  function carregar() {
+    document.querySelectorAll("img[data-src]").forEach(function (i) {
+      i.src = i.getAttribute("data-src");
+      i.removeAttribute("data-src");
+    });
+  }
+  if (!secao || !("IntersectionObserver" in window)) { carregar(); return; }
+  var obs = new IntersectionObserver(function (es) {
+    if (es[0].isIntersecting) { carregar(); obs.disconnect(); }
+  }, { rootMargin: "900px 0px" });
+  obs.observe(secao);
+})();
+
+/* Faixas fora da tela ficam pausadas (poupa bateria e processamento no celular) */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var obs = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.target.classList.toggle("is-paused", !e.isIntersecting); });
+  });
+  document.querySelectorAll(".marquee").forEach(function (m) { obs.observe(m); });
+})();
+
 /* --------------------------------------------------------------------------
    4) Temas clicáveis ("Qual é a sua dúvida hoje?")
    -------------------------------------------------------------------------- */
@@ -81,7 +105,6 @@ if (!reduzMovimento) {
   var painel = document.getElementById("topicPanel");
   var titulo = document.getElementById("tpTitle");
   var texto = document.getElementById("tpText");
-  var cta = document.getElementById("tpCta");
   if (!caixa || !painel) return;
 
   function escolher(i, animar) {
@@ -91,8 +114,6 @@ if (!reduzMovimento) {
     });
     titulo.textContent = t.nome;
     texto.textContent = t.texto;
-    cta.setAttribute("data-tema", t.nome);
-    montarWhatsapp(cta);
     if (animar) {
       painel.classList.remove("swap");
       void painel.offsetWidth;
