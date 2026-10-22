@@ -251,13 +251,13 @@ strong { font-weight: 600; color: var(--plum); }
 /* --------------------------- Galeria e depoimentos --------------------------- */
 .galeria { padding-bottom: 60px; }
 .galeria .marquee, .depoimentos .marquee { margin-top: 32px; }
-.gallery-track { gap: 16px; padding-right: 16px; animation-duration: 55s; align-items: flex-start; }
+.gallery-track { gap: 16px; padding-right: 16px; animation-duration: 110s; align-items: flex-start; }
 .gallery-track img { width: 210px; height: 290px; object-fit: cover; border-radius: 18px; flex: 0 0 auto; background: var(--card-rose); }
 .gallery-track img:not([src]) { color: transparent; font-size: 0; }
 .gallery-track img:nth-child(even) { border-radius: 105px 105px 18px 18px; margin-top: 26px; }
 
 .depoimentos { background: #fff; }
-.tm-track { gap: 16px; padding-right: 16px; animation-duration: 70s; align-items: stretch; }
+.tm-track { gap: 16px; padding-right: 16px; animation-duration: 110s; align-items: stretch; }
 .tm-card {
   flex: 0 0 290px; background: var(--bg); border: 1px solid var(--linha); border-radius: 20px; padding: 22px;
   display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
@@ -392,6 +392,8 @@ strong { font-weight: 600; color: var(--plum); }
 
   .gabi-copy p { font-size: 16.5px; }
 
+  .gallery-track { animation-duration: 55s; }
+  .tm-track { animation-duration: 70s; }
   .gallery-track img { width: 260px; height: 350px; border-radius: 22px; }
   .gallery-track img:nth-child(even) { border-radius: 130px 130px 22px 22px; margin-top: 34px; }
   .tm-card { flex-basis: 330px; padding: 26px; }

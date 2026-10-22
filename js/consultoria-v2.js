@@ -59,10 +59,37 @@ if (!reduzMovimento) {
 (function () {
   var secao = document.querySelector(".galeria");
   function carregar() {
-    document.querySelectorAll("img[data-src]").forEach(function (i) {
-      i.src = i.getAttribute("data-src");
-      i.removeAttribute("data-src");
-    });
+    /* Computador: baixa todas de uma vez, versão normal */
+    if (window.matchMedia("(min-width: 760px)").matches) {
+      document.querySelectorAll("img[data-src]").forEach(function (i) {
+        i.src = i.getAttribute("data-src");
+        i.removeAttribute("data-src");
+      });
+      return;
+    }
+    /* Celular: versões menores, baixando em fila (3 por vez, na ordem em que aparecem),
+       para as primeiras fotos ficarem prontas logo em vez de todas chegarem "pela metade". */
+    var trilhos = document.querySelectorAll(".marquee-photos .marquee-track");
+    var originais = trilhos[0] ? trilhos[0].querySelectorAll("img[data-src]") : [];
+    var copias = trilhos[1] ? trilhos[1].querySelectorAll("img[data-src]") : [];
+    var fila = [];
+    originais.forEach(function (img, i) { fila.push({ img: img, copia: copias[i] }); });
+    var ativos = 0, MAX = 3;
+    function proximo() {
+      while (ativos < MAX && fila.length) {
+        (function (item) {
+          ativos++;
+          var url = item.img.getAttribute("data-src").replace("/opt/", "/opt/m/");
+          function fim() { ativos--; proximo(); }
+          item.img.onload = fim;
+          item.img.onerror = fim;
+          item.img.src = url;
+          item.img.removeAttribute("data-src");
+          if (item.copia) { item.copia.src = url; item.copia.removeAttribute("data-src"); }
+        })(fila.shift());
+      }
+    }
+    proximo();
   }
   if (!secao || !("IntersectionObserver" in window)) { carregar(); return; }
   var obs = new IntersectionObserver(function (es) {
