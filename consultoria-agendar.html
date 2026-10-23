@@ -2,9 +2,10 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<!-- Proteção extra: a página só carrega scripts, estilos e fontes de origens conhecidas,
-     e só aceita exibir a agenda do Cal.com. Bloqueia qualquer outro conteúdo injetado. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://cal.com https://*.cal.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<!-- Proteção extra: a página só carrega scripts, estilos e fontes de origens conhecidas
+     e não permite nenhum quadro embutido. Bloqueia qualquer outro conteúdo injetado.
+     A agenda NÃO fica nesta página: o link é enviado só a quem pagou. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'none'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Pagamento confirmado — Consultoria individual com Gabi</title>
@@ -46,6 +47,7 @@
       <h1>Pagamento confirmado!</h1>
       <p class="ok-sub">Que alegria ter você aqui. Obrigada pela confiança.</p>
       <p class="ok-sub">Agora falta só um passo: <strong>escolher o dia e o horário do nosso encontro.</strong></p>
+      <p class="ok-sub">O link da agenda chega para você por <strong>e-mail e WhatsApp</strong>.</p>
     </div>
   </section>
 
@@ -56,13 +58,13 @@
       <ol class="passos3 stagger">
         <li class="passo3">
           <span class="n">1</span>
-          <h3>Escolha o melhor dia e horário</h3>
-          <p>Escolha na agenda logo abaixo o momento que combina melhor com você.</p>
+          <h3>Receba o link da agenda</h3>
+          <p>Assim que o pagamento é confirmado, enviamos o link para o e-mail e o WhatsApp que você informou. O link é pessoal: não o compartilhe.</p>
         </li>
         <li class="passo3">
           <span class="n">2</span>
-          <h3>Conte suas dúvidas</h3>
-          <p>Ao agendar, você responde a algumas perguntas rápidas. É com elas que eu preparo nosso encontro: quanto mais contexto você compartilhar, melhor.</p>
+          <h3>Escolha o dia e conte suas dúvidas</h3>
+          <p>Você escolhe o melhor dia e horário e responde a algumas perguntas rápidas. É com elas que eu preparo nosso encontro: quanto mais contexto você compartilhar, melhor.</p>
         </li>
         <li class="passo3">
           <span class="n">3</span>
@@ -72,8 +74,9 @@
       </ol>
 
       <div class="ok-notas reveal">
+        <p class="nota-card"><strong>Prazo de envio do link:</strong> em até 2 horas, em horário comercial.</p>
         <p class="nota-card">Os horários disponíveis começam daqui a alguns dias úteis. Isso me dá tempo de ler com calma tudo o que você contou.</p>
-        <p class="nota-card">Se você adquiriu o <strong>pacote de 3 sessões</strong>, agende agora a primeira. As próximas combinamos ao final do nosso primeiro encontro.</p>
+        <p class="nota-card">Se você adquiriu o <strong>pacote de 3 sessões</strong>, agende a primeira assim que receber o link. As próximas combinamos ao final do nosso primeiro encontro.</p>
       </div>
 
       <div class="seguranca reveal">
@@ -96,32 +99,12 @@
     </div>
   </section>
 
-  <!-- ======================= AGENDA ======================= -->
-  <section class="secao ok-agenda" id="agenda-secao">
-    <div class="container">
-      <span class="eyebrow center">Agora é com você</span>
-      <h2 class="secao-titulo center">Escolha o dia e o horário</h2>
-
-      <div class="agenda-box reveal" id="agenda">
-        <!-- Enquanto o link do Cal.com não for configurado em js/consultoria-agendar.js, aparece esta prévia -->
-        <div class="agenda-placeholder">
-          <span class="agenda-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5.5" width="16" height="14.5" rx="2.6" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8.5 3.8v3.4M15.5 3.8v3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-          <h3>A agenda da Gabi aparece aqui</h3>
-          <p>Você escolhe o dia e o horário e responde às perguntas sobre suas dúvidas, tudo nesta mesma tela.</p>
-          <small>Prévia: a agenda será conectada assim que o Cal.com estiver configurado.</small>
-        </div>
-      </div>
-      <p class="agenda-alt" id="agendaAlt" hidden>
-        A agenda não apareceu? <a id="agendaAltLink" href="#" target="_blank" rel="noopener">Abra em uma nova página</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ======================= AJUDA ======================= -->
+  <!-- ======================= NÃO RECEBEU O LINK? ======================= -->
   <section class="secao dark ok-ajuda">
     <div class="container ok-ajuda-inner reveal">
-      <h2 class="secao-titulo">Precisa de ajuda?</h2>
-      <p>Não conseguiu agendar ou ficou com alguma dúvida? Fale comigo pelo WhatsApp.</p>
+      <h2 class="secao-titulo">Não recebeu o link?</h2>
+      <p>Confira a caixa de entrada, o spam e a aba Promoções do e-mail que você usou no pagamento.</p>
+      <p>Se já passou do prazo e o link não chegou, fale comigo pelo WhatsApp que eu resolvo para você.</p>
       <a href="#" class="btn btn-light btn-large js-whatsapp">Falar com a Gabi</a>
     </div>
   </section>
