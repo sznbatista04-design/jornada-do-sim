@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CONSULTORIA INDIVIDUAL COM GABI — versão 2 (comportamento)
+   CONSULTORIA INDIVIDUAL COM GABI — comportamento da página
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -7,21 +7,53 @@
    Formato: código do país + DDD + número, sem espaços, "+" ou traço.
    Exemplo: 5511998765432
    -------------------------------------------------------------------------- */
-const WHATSAPP_NUMERO = "5599999999999";
-const MENSAGEM_PADRAO = "Oi, Gabi! Quero agendar a consultoria individual.";
-
+const WHATSAPP_NUMERO = "34682696591";
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Monta o link do WhatsApp de um botão (usa data-plano, se existir) */
-function montarWhatsapp(botao) {
-  var plano = botao.getAttribute("data-plano");
-  var texto = MENSAGEM_PADRAO;
-  if (plano) texto = "Oi, Gabi! Quero agendar a consultoria individual (" + plano + ").";
-  botao.setAttribute("href", "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(texto));
-  botao.setAttribute("target", "_blank");
-  botao.setAttribute("rel", "noopener");
+/* --------------------------------------------------------------------------
+   LINKS DE PAGAMENTO (Asaas)  ← COLE AQUI os 2 links, entre as aspas
+   Exemplo: "https://www.asaas.com/c/abcdefghij"
+   Os botões "Contratar agora" levam direto para o pagamento do plano.
+   Por segurança, só são aceitos endereços do Asaas (www.asaas.com ou
+   sandbox.asaas.com, em https). Qualquer outro endereço é ignorado.
+   -------------------------------------------------------------------------- */
+const LINKS_PAGAMENTO = {
+  "sessão individual": "",
+  "pacote com 3 sessões": ""
+};
+const ENDERECO_ASAAS = /^https:\/\/(www|sandbox)\.asaas\.com\/[A-Za-z0-9_\-\/.?=&%]+$/;
+
+function linkPagamento(plano) {
+  var l = LINKS_PAGAMENTO[plano];
+  if (!l) return null;
+  if (!ENDERECO_ASAAS.test(l)) { console.warn("Link de pagamento inválido para: " + plano); return null; }
+  return l;
 }
-document.querySelectorAll(".js-whatsapp").forEach(montarWhatsapp);
+
+document.querySelectorAll(".js-pagar").forEach(function (botao) {
+  var link = linkPagamento(botao.getAttribute("data-plano"));
+  if (link) {
+    botao.setAttribute("href", link);
+    botao.setAttribute("rel", "noopener");
+    return;
+  }
+  /* Sem link configurado: fica como prévia (não abre WhatsApp nem leva a lugar nenhum) */
+  botao.setAttribute("href", "#investimento");
+  botao.setAttribute("aria-disabled", "true");
+  botao.classList.add("is-previa");
+  var nota = document.createElement("small");
+  nota.className = "previa-nota";
+  nota.textContent = "Prévia: o link de pagamento será ativado no lançamento.";
+  botao.parentNode.appendChild(nota);
+});
+
+/* Link secundário: tirar dúvida antes de contratar */
+document.querySelectorAll(".js-whatsapp-duvida").forEach(function (b) {
+  b.setAttribute("href", "https://wa.me/" + WHATSAPP_NUMERO + "?text=" +
+    encodeURIComponent("Oi, Gabi! Tenho uma dúvida sobre a consultoria individual."));
+  b.setAttribute("target", "_blank");
+  b.setAttribute("rel", "noopener");
+});
 
 /* --------------------------------------------------------------------------
    2) Palavra que troca sozinha no título

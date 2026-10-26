@@ -280,6 +280,11 @@ strong { font-weight: 600; color: var(--plum); }
 .plano p.plano-linha { font-weight: 600; color: var(--plum); margin-bottom: 8px; }
 .plano > p:last-of-type { margin-bottom: 22px; }
 .plano .btn-cta { margin-top: auto; }
+.plano .plano-seguro { display: block; text-align: center; font-size: 12.5px; line-height: 1.5; color: var(--rose-text); margin-top: 12px; }
+.planos-duvida, .faq-duvida { text-align: center; font-size: 14px; margin-top: 22px; }
+.planos-duvida a, .faq-duvida a { color: var(--terracota); font-weight: 600; }
+.btn.is-previa { opacity: 0.85; }
+.plano .previa-nota { display: block; text-align: center; font-size: 12px; line-height: 1.4; color: #8a6a2f; margin-top: 8px; }
 
 /* --------------------------- FAQ --------------------------- */
 .faq { background: #fff; }

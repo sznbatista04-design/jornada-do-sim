@@ -9,7 +9,7 @@
    NÚMERO DO WHATSAPP  ← TROQUE AQUI (só neste lugar)
    Formato: código do país + DDD + número, sem espaços, "+" ou traço.
    -------------------------------------------------------------------------- */
-const WHATSAPP_NUMERO = "5599999999999";
+const WHATSAPP_NUMERO = "34682696591";
 const MENSAGEM_AJUDA = "Oi, Gabi! Acabei de pagar a consultoria individual e ainda não recebi o link da agenda.";
 
 /* ---- Botões de WhatsApp ---- */
